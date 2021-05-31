@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const plantsRouter = require('./routes/plants.routes');
 
-server.use('/api/plants', plantsRouter);
+server.use('/plants', plantsRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.blue(`localhost:${port}`)}`));
