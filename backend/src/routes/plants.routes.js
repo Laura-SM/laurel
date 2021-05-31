@@ -6,14 +6,14 @@ function plantsRouter() {
 
   routes
     .route('/')
-    .get(plantsController.getAll)
-    .post(plantsController.createOne);
+    .get(plantsController.getAllPlants)
+    .post(plantsController.createOnePlant);
 
   routes
     .route('/:plantId')
-    .get(plantsController.getById)
-    .put(plantsController.updateById)
-    .delete(plantsController.deleteById);
+    .get(plantsController.getOnePlantById)
+    .put(plantsController.updateOnePlantById)
+    .delete(plantsController.deleteOnePlantById);
 
   return routes;
 }
