@@ -1,5 +1,5 @@
 const debug = require('debug')('server:plants.controller');
-const Plant = require('../model/plant.model');
+const Plant = require('../models/plant.model');
 
 function plantsController() {
   async function getAllPlants(req, res) {
