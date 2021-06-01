@@ -4,7 +4,6 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const passport = require('passport');
 const authRoutes = require('./routes/auth.routes');
 const usersRoutes = require('./routes/users.routes');
 const plantsRoutes = require('./routes/plants.routes');
@@ -30,11 +29,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 
 server.use('/', authRoutes);
-server.use(
-  '/user',
-  passport.authenticate('jwt', { session: false }),
-  usersRoutes,
-);
+server.use('/users', usersRoutes);
 server.use('/plants', plantsRoutes);
 
 server.listen(port,
