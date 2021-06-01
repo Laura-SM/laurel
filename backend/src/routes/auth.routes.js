@@ -39,7 +39,7 @@ authRoutes.post(
               const token = jwt.sign(
                 { user: data },
                 process.env.JWT_SECRET,
-                { expiresIn: '1m' },
+                { expiresIn: '40m' },
               );
               const refreshToken = jwt.sign(
                 { user: data },
@@ -85,7 +85,7 @@ authRoutes.post(
       const accessToken = jwt.sign(
         { user: data },
         process.env.JWT_SECRET,
-        { expiresIn: '1m' },
+        { expiresIn: '40m' },
       );
 
       return res.json({
@@ -95,16 +95,17 @@ authRoutes.post(
   },
 );
 
-authRoutes.get(
-  '/profile',
-  (req, res) => {
-    res.json({
-      message: 'You made it to the secure route',
-      user: req.user,
-      token: req.headers.authorization,
-    });
-  },
-);
+authRoutes
+  .get(
+    '/profile',
+    (req, res) => {
+      res.json({
+        message: 'You made it to the secure route',
+        user: req.user,
+        token: req.headers.authorization,
+      });
+    },
+  );
 
 authRoutes.post(
   '/logout',
