@@ -25,6 +25,9 @@ const Login = () => {
     textButton: {
       fontSize: 24,
     },
+    text: {
+      fontSize: 18,
+    },
     underlineText: {
       textDecorationLine: 'underline',
     },
@@ -44,7 +47,7 @@ const Login = () => {
       >
         <Text style={styles.textButton}>Log In</Text>
       </TouchableOpacity>
-      <Text>
+      <Text style={styles.text}>
         Don't have an account?{' '}
         <Text style={styles.underlineText}>Create new</Text>
       </Text>
