@@ -9,6 +9,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
   },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  list: {
+    overflow: 'hidden',
+  },
 });
 
 export default styles;
