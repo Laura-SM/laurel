@@ -1,11 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/actionCreators';
 import styles from './home.styes';
+
+const CardPlant = ({plant}) => (
+  <TouchableOpacity style={styles.image}>
+    <Text>{plant.name}</Text>
+    <Image style={styles.image} source={{uri: plant.image}} />
+  </TouchableOpacity>
+);
 
 const Home = ({navigation, plants, dispatch}) => {
   useEffect(() => {
@@ -13,6 +20,15 @@ const Home = ({navigation, plants, dispatch}) => {
       dispatch(loadPlants());
     }
   }, []);
+
+  const renderCardPlant = ({item}) => {
+    return (
+      <CardPlant
+        plant={item}
+        // onPress={() => setSelectedId(item.id)}
+      />
+    );
+  };
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -23,9 +39,20 @@ const Home = ({navigation, plants, dispatch}) => {
         ) : (
           <Text> No tenim plantes</Text>
         )}
-        {plants.map(plant => (
-          <Text>{plant.name}</Text>
-        ))}
+
+        <FlatList
+          style={styles.list}
+          data={plants}
+          renderItem={renderCardPlant}
+          keyExtractor={plant => plant.id}
+        />
+
+        {/* {plants.map(plant => (
+          <>
+            <Text>{plant.name}</Text>
+            <Image style={styles.image} source={{uri: plant.image}} />
+          </>
+        ))} */}
       </View>
       <TouchableOpacity
         style={styles.button}
