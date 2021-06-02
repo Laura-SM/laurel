@@ -1,38 +1,8 @@
 import React from 'react';
-import {Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import styles from './login.styles';
 
-const Login = () => {
-  const styles = StyleSheet.create({
-    mainView: {
-      flex: 1,
-      backgroundColor: '#D6EADF',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-    },
-    logo: {
-      width: 300,
-      height: 300,
-      marginTop: 60,
-    },
-    button: {
-      width: 150,
-      height: 60,
-      backgroundColor: '#B8E0D2',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 10,
-    },
-    textButton: {
-      fontSize: 24,
-    },
-    text: {
-      fontSize: 18,
-    },
-    underlineText: {
-      textDecorationLine: 'underline',
-    },
-  });
-
+const Login = ({navigation}) => {
   return (
     <View style={styles.mainView}>
       <Image
@@ -41,16 +11,23 @@ const Login = () => {
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
+      <TextInput style={styles.input} defaultValue="Your email" />
+      <TextInput style={styles.input} defaultValue="Your password" />
       <TouchableOpacity
         style={styles.button}
         // onPress={onPress}
       >
-        <Text style={styles.textButton}>Log In</Text>
+        <Text style={styles.textButton}>Sign In</Text>
       </TouchableOpacity>
       <Text style={styles.text}>
         Don't have an account?{' '}
         <Text style={styles.underlineText}>Create new</Text>
       </Text>
+      <TouchableOpacity
+        style={styles.button}
+        title="Go to Home"
+        onPress={() => navigation.navigate('Home')}
+      />
     </View>
   );
 };
