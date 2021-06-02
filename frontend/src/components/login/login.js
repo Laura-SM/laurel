@@ -1,22 +1,32 @@
 import React from 'react';
-import {Text, View, Image, StyleSheet, Button} from 'react-native';
+import {Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 const Login = () => {
   const styles = StyleSheet.create({
     mainView: {
       flex: 1,
       backgroundColor: '#D6EADF',
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignItems: 'center',
     },
     logo: {
       width: 300,
       height: 300,
+      marginTop: 60,
     },
     button: {
-      width: 200,
+      width: 150,
       height: 60,
-      color: '#B8E0D2',
+      backgroundColor: '#B8E0D2',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 10,
+    },
+    textButton: {
+      fontSize: 24,
+    },
+    underlineText: {
+      textDecorationLine: 'underline',
     },
   });
 
@@ -28,13 +38,16 @@ const Login = () => {
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
-      <Button
+      <TouchableOpacity
         style={styles.button}
-        // onPress={onPressLearnMore}
-        title="Sign In"
-        accessibilityLabel="Sign In button"
-      />
-      <Text>Don't have an account? Create new</Text>
+        // onPress={onPress}
+      >
+        <Text style={styles.textButton}>Log In</Text>
+      </TouchableOpacity>
+      <Text>
+        Don't have an account?{' '}
+        <Text style={styles.underlineText}>Create new</Text>
+      </Text>
     </View>
   );
 };
