@@ -1,26 +1,26 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider} from 'react-redux';
 import configureStore from './src/redux/store/index';
 import Login from './src/components/login/login';
 import Home from './src/components/home/home';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <Provider store={configureStore()}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
+        <Tab.Navigator initialRouteName="Login">
+          <Tab.Screen
             name="Login"
             component={Login}
             options={{title: 'Login'}}
           />
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+        </Tab.Navigator>
       </NavigationContainer>
     </Provider>
   );
