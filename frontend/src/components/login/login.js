@@ -1,8 +1,24 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
+import {connect} from 'react-redux';
+import {loadUser} from '../../redux/actions/usersActionCreators';
 import styles from './login.styles';
 
-const Login = ({navigation}) => {
+const Login = ({dispatch, navigation}) => {
+  let [email, setEmailInputValue] = React.useState('');
+  let [password, setPasswordInputValue] = React.useState('');
+
+  const onPressSignIn = () => {
+    dispatch(loadUser({email, password}));
+  };
+
   return (
     <View style={styles.mainView}>
       <Image
@@ -11,14 +27,26 @@ const Login = ({navigation}) => {
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
-      <TextInput style={styles.input} defaultValue="Your email" />
-      <TextInput style={styles.input} defaultValue="Your password" />
-      <TouchableOpacity
-        style={styles.button}
-        // onPress={onPress}
-      >
-        <Text style={styles.textButton}>Sign In</Text>
-      </TouchableOpacity>
+      <SafeAreaView>
+        <TextInput
+          style={styles.input}
+          onChangeText={text => setEmailInputValue(text)}
+          value={email}
+          placeholder="email"
+          keyboardType="default"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={text => setPasswordInputValue(text)}
+          value={password}
+          placeholder="password"
+          keyboardType="numeric"
+        />
+        <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
+          <Text style={styles.textButton}>Sign In</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+
       <Text style={styles.text}>
         Don't have an account?{' '}
         <Text style={styles.underlineText}>Create new</Text>
@@ -32,4 +60,14 @@ const Login = ({navigation}) => {
   );
 };
 
-export default Login;
+// Login.propTypes = {
+//   dispatch: PropTypes.func.isRequired,
+// };
+
+function mapStateToProps({selectedUser}) {
+  return {
+    selectedUser,
+  };
+}
+
+export default connect(mapStateToProps)(Login);
