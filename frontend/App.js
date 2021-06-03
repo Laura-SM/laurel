@@ -17,7 +17,7 @@ const App = () => {
           <Tab.Screen
             name="Login"
             component={Login}
-            options={{title: 'Login'}}
+            options={{title: 'Login', tabBarVisible: false}}
           />
           <Tab.Screen name="Home" component={Home} />
         </Tab.Navigator>
