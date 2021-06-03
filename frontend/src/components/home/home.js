@@ -4,7 +4,7 @@ import {Text, View, Image, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {loadPlants} from '../../redux/actions/actionCreators';
+import {loadPlants} from '../../redux/actions/plantsActionCreators';
 import styles from './home.styes';
 
 const CardPlant = ({plant}) => (
