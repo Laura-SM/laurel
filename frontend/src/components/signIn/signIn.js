@@ -1,16 +1,26 @@
-import React from 'react';
-import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  Pressable,
+} from 'react-native';
 import {connect} from 'react-redux';
-import {loadUser} from '../../redux/actions/usersActionCreators';
+import {signInUser} from '../../redux/actions/authActionCreators';
 import styles from './signIn.styles';
 
-const SignIn = ({dispatch, userAccess}) => {
-  let [email, setEmailInputValue] = React.useState('');
-  let [password, setPasswordInputValue] = React.useState('');
+const SignIn = ({dispatch, userAccess, navigation}) => {
+  useEffect(() => {
+    userAccess && navigation.navigate('Search');
+  }, [userAccess, navigation]);
+
+  let [email, setEmailInputValue] = useState('');
+  let [password, setPasswordInputValue] = useState('');
 
   const onPressSignIn = () => {
-    dispatch(loadUser({email, password}));
-    console.log(userAccess.token);
+    dispatch(signInUser({email, password}));
   };
 
   return (
@@ -42,7 +52,9 @@ const SignIn = ({dispatch, userAccess}) => {
       </TouchableOpacity>
       <Text style={styles.text}>
         Don't have an account?{' '}
-        <Text style={styles.underlineText}>Create new</Text>
+        <Pressable onPress={() => navigation.navigate('SignUp')}>
+          <Text style={styles.underlineText}>Create new</Text>
+        </Pressable>
       </Text>
     </View>
   );

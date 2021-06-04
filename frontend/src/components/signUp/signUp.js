@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import {connect} from 'react-redux';
-import {loadUser} from '../../redux/actions/usersActionCreators';
+import {signUpUser, signInUser} from '../../redux/actions/authActionCreators';
 import styles from './signUp.styles';
 
-const SignUp = ({dispatch}) => {
-  let [email, setEmailInputValue] = React.useState('');
-  let [password, setPasswordInputValue] = React.useState('');
+const SignUp = ({dispatch, userAccess, navigation}) => {
+  useEffect(() => {
+    userAccess && navigation.navigate('Search');
+  }, [userAccess, navigation]);
 
-  const onPressSignIn = () => {
-    dispatch(loadUser({email, password}));
+  let [email, setEmailInputValue] = useState('');
+  let [password, setPasswordInputValue] = useState('');
+
+  const onPressSignUp = () => {
+    dispatch(signUpUser({email, password}));
+    console.log('un');
+    dispatch(signInUser({email, password}));
+    console.log('dos');
   };
 
   return (
@@ -36,16 +43,17 @@ const SignUp = ({dispatch}) => {
           keyboardType="numeric"
         />
       </View>
-      <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
+      <TouchableOpacity style={styles.button} onPress={onPressSignUp}>
         <Text style={styles.textButton}>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-function mapStateToProps({userToken}) {
+function mapStateToProps({user, userAccess}) {
   return {
-    userToken,
+    user,
+    userAccess,
   };
 }
 

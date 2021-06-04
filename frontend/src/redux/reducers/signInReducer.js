@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-function selectedUserReducer(userTokens = {}, action) {
+function signInReducer(userTokens = {}, action) {
   switch (action.type) {
     case actionTypes.SIGNIN_USER:
       return action.userTokens;
@@ -10,4 +10,4 @@ function selectedUserReducer(userTokens = {}, action) {
   }
 }
 
-export default selectedUserReducer;
+export default signInReducer;
