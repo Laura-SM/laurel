@@ -4,12 +4,13 @@ import {connect} from 'react-redux';
 import {loadUser} from '../../redux/actions/usersActionCreators';
 import styles from './signIn.styles';
 
-const SignIn = ({dispatch}) => {
+const SignIn = ({dispatch, userAccess}) => {
   let [email, setEmailInputValue] = React.useState('');
   let [password, setPasswordInputValue] = React.useState('');
 
   const onPressSignIn = () => {
     dispatch(loadUser({email, password}));
+    console.log(userAccess.token);
   };
 
   return (
@@ -47,9 +48,9 @@ const SignIn = ({dispatch}) => {
   );
 };
 
-function mapStateToProps({userToken}) {
+function mapStateToProps({userAccess}) {
   return {
-    userToken,
+    userAccess,
   };
 }
 
