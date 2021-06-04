@@ -23,7 +23,7 @@ passport.use(
 );
 
 passport.use(
-  'login',
+  'signin',
   new localStrategy.Strategy(
     {
       usernameField: 'email',

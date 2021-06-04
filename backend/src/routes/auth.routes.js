@@ -17,10 +17,10 @@ authRoutes.post(
 );
 
 authRoutes.post(
-  '/login',
+  '/signin',
   async (req, res, next) => {
     passport.authenticate(
-      'login',
+      'signin',
       async (err, user) => {
         try {
           if (err || !user) {
