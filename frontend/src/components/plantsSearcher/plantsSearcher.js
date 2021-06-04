@@ -2,10 +2,9 @@
 import React, {useEffect} from 'react';
 import {Text, View, Image, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import styles from './home.styes';
+import styles from './plantsSearcher.styes';
 
 const CardPlant = ({plant}) => (
   <TouchableOpacity style={styles.image}>
@@ -14,12 +13,12 @@ const CardPlant = ({plant}) => (
   </TouchableOpacity>
 );
 
-const Home = ({navigation, plants, dispatch}) => {
+const PlantsSearcher = ({navigation, plants, dispatch}) => {
   useEffect(() => {
     if (!plants.length) {
       dispatch(loadPlants());
     }
-  }, []);
+  }, [plants]);
 
   const renderCardPlant = ({item}) => {
     return (
@@ -32,45 +31,27 @@ const Home = ({navigation, plants, dispatch}) => {
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
+      <Text>Search plants</Text>
       <View className="plants-menu">
-        {plants.length ? (
+        {/* {plants.length ? (
           <Text>Tenim plantes</Text>
         ) : (
           <Text> No tenim plantes</Text>
-        )}
-
+        )} */}
         <FlatList
           style={styles.list}
           data={plants}
           renderItem={renderCardPlant}
           keyExtractor={plant => plant.id}
         />
-
-        {/* {plants.map(plant => (
-          <>
-            <Text>{plant.name}</Text>
-            <Image style={styles.image} source={{uri: plant.image}} />
-          </>
-        ))} */}
       </View>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.button}
         title="Go back"
         onPress={() => navigation.goBack()}
-      />
+      /> */}
     </View>
   );
-};
-
-Home.propTypes = {
-  plants: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(store) {
@@ -79,4 +60,4 @@ function mapStateToProps(store) {
   };
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(PlantsSearcher);
