@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import {connect} from 'react-redux';
 import {loadUser} from '../../redux/actions/usersActionCreators';
-import styles from './login.styles';
+import styles from './signUp.styles';
 
-const Login = ({dispatch, navigation}) => {
+const SignUp = ({dispatch}) => {
   let [email, setEmailInputValue] = React.useState('');
   let [password, setPasswordInputValue] = React.useState('');
 
@@ -27,7 +20,7 @@ const Login = ({dispatch, navigation}) => {
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
-      <SafeAreaView>
+      <View>
         <TextInput
           style={styles.input}
           onChangeText={text => setEmailInputValue(text)}
@@ -42,32 +35,18 @@ const Login = ({dispatch, navigation}) => {
           placeholder="password"
           keyboardType="numeric"
         />
-        <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
-          <Text style={styles.textButton}>Sign In</Text>
-        </TouchableOpacity>
-      </SafeAreaView>
-
-      <Text style={styles.text}>
-        Don't have an account?{' '}
-        <Text style={styles.underlineText}>Create new</Text>
-      </Text>
-      <TouchableOpacity
-        style={styles.button}
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home')}
-      />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
+        <Text style={styles.textButton}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-// Login.propTypes = {
-//   dispatch: PropTypes.func.isRequired,
-// };
-
-function mapStateToProps({selectedUser}) {
+function mapStateToProps({userToken}) {
   return {
-    selectedUser,
+    userToken,
   };
 }
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(SignUp);

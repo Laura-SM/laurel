@@ -4,8 +4,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider} from 'react-redux';
 import configureStore from './src/redux/store/index';
-import Login from './src/components/login/login';
-import Home from './src/components/home/home';
+import SignIn from './src/components/signIn/signIn';
+import SignUp from './src/components/signUp/signUp';
+import PlantsSearcher from './src/components/plantsSearcher/plantsSearcher';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,13 +14,18 @@ const App = () => {
   return (
     <Provider store={configureStore()}>
       <NavigationContainer>
-        <Tab.Navigator initialRouteName="Login">
+        <Tab.Navigator initialRouteName="SignIn">
           <Tab.Screen
-            name="Login"
-            component={Login}
-            options={{title: 'Login', tabBarVisible: false}}
+            name="SignIn"
+            component={SignIn}
+            options={{title: 'SignIn'}}
           />
-          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{title: 'SignUp'}}
+          />
+          <Tab.Screen name="Search" component={PlantsSearcher} />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

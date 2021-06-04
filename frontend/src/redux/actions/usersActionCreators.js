@@ -9,7 +9,7 @@ export function loadUser(user) {
       const {data} = await axios.post(url, user);
       dispatch({
         type: actionTypes.GET_USER,
-        user: data,
+        userToken: data,
       });
     } catch (error) {
       dispatch({
