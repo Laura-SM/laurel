@@ -6,7 +6,7 @@ import selectedUserReducer from './selectedUserReducer';
 const rootReducer = combineReducers({
   plants: plantsReducer,
   selectedPlant: selectedPlantReducer,
-  selectedUser: selectedUserReducer,
+  userAccess: selectedUserReducer,
 });
 
 export default rootReducer;

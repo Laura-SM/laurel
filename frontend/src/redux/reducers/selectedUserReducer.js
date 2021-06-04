@@ -1,12 +1,12 @@
 import actionTypes from '../actions/actionTypes';
 
-function selectedUserReducer(userToken = {}, action) {
+function selectedUserReducer(userTokens = {}, action) {
   switch (action.type) {
-    case actionTypes.GET_USER:
-      return action.userToken;
+    case actionTypes.SIGNIN_USER:
+      return action.userTokens;
 
     default:
-      return userToken;
+      return userTokens;
   }
 }
 

@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontSize: 20,
     margin: 5,
+    paddingHorizontal: 10,
   },
 });
 
