@@ -1,19 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, Image, FlatList} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Text, View, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
+import CardPlant from '../cardPlant/cardPlant';
 import styles from './plantsSearcher.styes';
 
-const CardPlant = ({plant}) => (
-  <TouchableOpacity style={styles.image}>
-    <Text>{plant.name}</Text>
-    <Image style={styles.image} source={{uri: plant.image}} />
-  </TouchableOpacity>
-);
-
-const PlantsSearcher = ({navigation, plants, dispatch}) => {
+const PlantsSearcher = ({plants, dispatch}) => {
   useEffect(() => {
     if (!plants.length) {
       dispatch(loadPlants());
@@ -21,12 +14,7 @@ const PlantsSearcher = ({navigation, plants, dispatch}) => {
   }, [plants]);
 
   const renderCardPlant = ({item}) => {
-    return (
-      <CardPlant
-        plant={item}
-        // onPress={() => setSelectedId(item.id)}
-      />
-    );
+    return <CardPlant plant={item} />;
   };
 
   return (
