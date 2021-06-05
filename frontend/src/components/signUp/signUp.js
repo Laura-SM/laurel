@@ -1,22 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import {connect} from 'react-redux';
-import {signUpUser, signInUser} from '../../redux/actions/authActionCreators';
+import {signUpUser} from '../../redux/actions/authActionCreators';
 import styles from './signUp.styles';
 
-const SignUp = ({dispatch, userAccess, navigation}) => {
+const SignUp = ({dispatch, user, navigation}) => {
   useEffect(() => {
-    userAccess && navigation.navigate('Search');
-  }, [userAccess, navigation]);
+    user && navigation.navigate('SignIn');
+  }, [user, navigation]);
 
   let [email, setEmailInputValue] = useState('');
   let [password, setPasswordInputValue] = useState('');
 
   const onPressSignUp = () => {
     dispatch(signUpUser({email, password}));
-    console.log('un');
-    dispatch(signInUser({email, password}));
-    console.log('dos');
   };
 
   return (
@@ -50,10 +47,9 @@ const SignUp = ({dispatch, userAccess, navigation}) => {
   );
 };
 
-function mapStateToProps({user, userAccess}) {
+function mapStateToProps({user}) {
   return {
     user,
-    userAccess,
   };
 }
 

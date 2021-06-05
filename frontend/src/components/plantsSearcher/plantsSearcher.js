@@ -42,14 +42,9 @@ const PlantsSearcher = ({navigation, plants, dispatch}) => {
           style={styles.list}
           data={plants}
           renderItem={renderCardPlant}
-          keyExtractor={plant => plant.id}
+          keyExtractor={plant => plant._id}
         />
       </View>
-      {/* <TouchableOpacity
-        style={styles.button}
-        title="Go back"
-        onPress={() => navigation.goBack()}
-      /> */}
     </View>
   );
 };
