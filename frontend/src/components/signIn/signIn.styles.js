@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   mainView: {
     flex: 1,
     backgroundColor: '#D6EADF',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   logo: {
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   },
   underlineText: {
     textDecorationLine: 'underline',
+    fontSize: 18,
   },
   input: {
     width: 350,
