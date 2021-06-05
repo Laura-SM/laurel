@@ -13,7 +13,7 @@ import styles from './signIn.styles';
 
 const SignIn = ({dispatch, userAccess, navigation}) => {
   useEffect(() => {
-    userAccess && navigation.navigate('Search');
+    userAccess.token && navigation.navigate('Search');
   }, [userAccess, navigation]);
 
   let [email, setEmailInputValue] = useState('');
@@ -50,12 +50,11 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
       <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
         <Text style={styles.textButton}>Sign In</Text>
       </TouchableOpacity>
-      <Text style={styles.text}>
-        Don't have an account?{' '}
-        <Pressable onPress={() => navigation.navigate('SignUp')}>
-          <Text style={styles.underlineText}>Create new</Text>
-        </Pressable>
-      </Text>
+
+      <Pressable onPress={() => navigation.navigate('SignUp')}>
+        <Text style={styles.text}>Don't have an account? </Text>
+        <Text style={styles.underlineText}>Create new</Text>
+      </Pressable>
     </View>
   );
 };
