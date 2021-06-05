@@ -7,6 +7,8 @@ import configureStore from './src/redux/store/index';
 import SignIn from './src/components/signIn/signIn';
 import SignUp from './src/components/signUp/signUp';
 import PlantsSearcher from './src/components/plantsSearcher/plantsSearcher';
+import PlantDetails from './src/components/plantDetails/plantDetails';
+import CardPlant from './src/components/cardPlant/cardPlant';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,6 +28,8 @@ const App = () => {
             options={{title: 'SignUp'}}
           />
           <Tab.Screen name="Search" component={PlantsSearcher} />
+          <Tab.Screen name="PlantDetails" component={PlantDetails} />
+          <Tab.Screen name="CardPlant" component={CardPlant} />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>
