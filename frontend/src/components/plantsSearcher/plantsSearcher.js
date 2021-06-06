@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, FlatList} from 'react-native';
+import {Text, View, FlatList, ScrollView} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
 import CardPlant from '../cardPlant/cardPlant';
 import styles from './plantsSearcher.styes';
+import globalStyles from '../../styles/global.styles';
 
 const PlantsSearcher = ({plants, dispatch}) => {
   useEffect(() => {
@@ -13,27 +15,42 @@ const PlantsSearcher = ({plants, dispatch}) => {
     }
   }, [plants]);
 
+  const filterSearch = () => console.log('filter');
+
+  const goUp = () => console.log('goup');
+
   const renderCardPlant = ({item}) => {
     return <CardPlant plant={item} />;
   };
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Search plants</Text>
-      <View className="plants-menu">
-        {/* {plants.length ? (
-          <Text>Tenim plantes</Text>
-        ) : (
-          <Text> No tenim plantes</Text>
-        )} */}
+    <ScrollView
+      style={globalStyles.mainContainer}
+      showsVerticalScrollIndicator={false}>
+      <View style={globalStyles.headerContainer}>
+        <Text style={globalStyles.titleText}>Find a plant</Text>
+        <TouchableOpacity
+          style={globalStyles.roundButton}
+          onPress={filterSearch}>
+          <Text>Fi</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.plantsContainer} className="plants-menu">
         <FlatList
-          style={styles.list}
+          showsVerticalScrollIndicator={false}
+          horizontal={false}
+          numColumns={2}
           data={plants}
           renderItem={renderCardPlant}
           keyExtractor={plant => plant._id}
         />
       </View>
-    </View>
+      <View style={globalStyles.bottomContainer}>
+        <TouchableOpacity style={globalStyles.roundButton} onPress={goUp}>
+          <Text>Up</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 
