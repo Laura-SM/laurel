@@ -31,29 +31,31 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
-      <View>
-        <TextInput
-          style={styles.input}
-          onChangeText={text => setEmailInputValue(text)}
-          value={email}
-          placeholder="email"
-          keyboardType="default"
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={text => setPasswordInputValue(text)}
-          value={password}
-          placeholder="password"
-          keyboardType="numeric"
-        />
-      </View>
+
+      <TextInput
+        style={styles.input}
+        onChangeText={text => setEmailInputValue(text)}
+        value={email}
+        placeholder="email"
+        keyboardType="default"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={text => setPasswordInputValue(text)}
+        value={password}
+        placeholder="password"
+        keyboardType="numeric"
+      />
+
       <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
         <Text style={styles.textButton}>Sign In</Text>
       </TouchableOpacity>
 
       <Pressable onPress={() => navigation.navigate('SignUp')}>
-        <Text style={styles.text}>Don't have an account? </Text>
-        <Text style={styles.underlineText}>Create new</Text>
+        <Text style={styles.text}>
+          Don't have an account?{' '}
+          <Text style={styles.underlineText}>Create new</Text>
+        </Text>
       </Pressable>
     </View>
   );
