@@ -15,7 +15,7 @@ function PlantDetails({selectedPlant, dispatch, route}) {
 
   return (
     <ScrollView style={globalStyles.mainContainer}>
-      <Text style={globalStyles.titleText}>{selectedPlant.name} details</Text>
+      <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
       </Text>
