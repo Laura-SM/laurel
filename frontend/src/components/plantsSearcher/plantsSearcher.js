@@ -15,18 +15,14 @@ const PlantsSearcher = ({plants, dispatch}) => {
     }
   }, [plants]);
 
+  const goUp = () => console.log('goUp');
+
   const filterSearch = () => console.log('filter');
 
-  const goUp = () => console.log('goup');
-
-  const renderCardPlant = ({item}) => {
-    return <CardPlant plant={item} />;
-  };
+  const renderCardPlant = ({item}) => <CardPlant plant={item} />;
 
   return (
-    <ScrollView
-      style={globalStyles.mainContainer}
-      showsVerticalScrollIndicator={false}>
+    <ScrollView style={globalStyles.mainContainer}>
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>Find a plant</Text>
         <TouchableOpacity
@@ -37,9 +33,9 @@ const PlantsSearcher = ({plants, dispatch}) => {
       </View>
       <View style={styles.plantsContainer} className="plants-menu">
         <FlatList
-          showsVerticalScrollIndicator={false}
-          horizontal={false}
-          numColumns={2}
+          // showsVerticalScrollIndicator={false}
+          // horizontal={false}
+          // numColumns={2}
           data={plants}
           renderItem={renderCardPlant}
           keyExtractor={plant => plant._id}
