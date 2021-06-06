@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    margin: 20,
+    marginHorizontal: 20,
   },
   roundButton: {
     width: 60,
