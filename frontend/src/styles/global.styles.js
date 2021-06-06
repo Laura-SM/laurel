@@ -19,6 +19,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margin: 20,
   },
+  subTitleText: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 18,
+    margin: 20,
+  },
   roundButton: {
     width: 60,
     height: 60,
