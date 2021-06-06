@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   image: {
-    width: 160,
-    height: 250,
+    width: 350,
+    height: 350,
     borderRadius: 10,
-    margin: 15,
+    margin: 20,
   },
 });
 
