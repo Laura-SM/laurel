@@ -55,7 +55,7 @@ describe('Given plantsReducer function ', () => {
 
   test('when resolved with default, then should return updatedPlants', () => {
     expect(
-      plantsReducer([{name: 'kentia', _id: 1}], {
+      plantsReducer(undefined, {
         type: actionTypes.PLANTS_ERROR,
       }),
     ).toEqual([]);
