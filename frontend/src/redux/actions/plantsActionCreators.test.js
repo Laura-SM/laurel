@@ -74,7 +74,7 @@ describe('Given deletePlant function, ', () => {
 
 describe('Given updatePlant function, ', () => {
   test('when resolved, dispatch an object with type: UPDATE_PLANT and plant: data', async () => {
-    const plant = {name: 'kentia', plantId: 1};
+    const plant = {name: 'potus', plantId: 1};
     const dispatch = jest.fn();
     const data = {name: 'kentia', plantId: 1};
     axios.put.mockResolvedValue({data});
