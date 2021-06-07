@@ -14,7 +14,7 @@ function plantsReducer(plants = [], action) {
       break;
     case actionTypes.UPDATE_PLANT:
       updatedPlants = plants.map(plant =>
-        plant._id === action.plant.id ? {...plant, ...action.plant} : plant,
+        plant._id === action.plant._id ? {...plant, ...action.plant} : plant,
       );
       break;
     default:
