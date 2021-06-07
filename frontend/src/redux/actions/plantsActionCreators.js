@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://192.168.1.136:2021/plants';
+const url = 'http://192.168.8.104:2021/plants';
 
 export function loadPlants() {
   return async dispatch => {
