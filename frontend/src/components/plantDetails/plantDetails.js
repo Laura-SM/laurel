@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, Image, ScrollView} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlant} from '../../redux/actions/plantsActionCreators';
 import styles from './plantDetails.styles';
 import globalStyles from '../../styles/global.styles';
 
-function PlantDetails({selectedPlant, dispatch, route}) {
+function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
   const {plantId} = route.params;
   useEffect(() => {
     dispatch(loadPlant(plantId));
@@ -29,7 +28,9 @@ function PlantDetails({selectedPlant, dispatch, route}) {
         </View>
       </View>
       <Text style={globalStyles.text}>{selectedPlant.info}</Text>
-      <TouchableOpacity style={globalStyles.roundButton}>
+      <TouchableOpacity
+        style={globalStyles.roundButton}
+        onPress={() => goBack()}>
         <Text>Back</Text>
       </TouchableOpacity>
     </ScrollView>
