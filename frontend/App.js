@@ -4,11 +4,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider} from 'react-redux';
 import configureStore from './src/redux/store/index';
-import SignIn from './src/components/signIn/signIn';
-import SignUp from './src/components/signUp/signUp';
-import PlantsSearcher from './src/components/plantsSearcher/plantsSearcher';
-import PlantDetails from './src/components/plantDetails/plantDetails';
-import CardPlant from './src/components/cardPlant/cardPlant';
+import SignIn from './src/components/SignIn/SignIn';
+import SignUp from './src/components/SignUp/SignUp';
+import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
+import PlantDetails from './src/components/PlantDetails/PlantDetails';
+import CardPlant from './src/components/CardPlant/CardPlant';
 
 const Tab = createBottomTabNavigator();
 

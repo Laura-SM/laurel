@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import {connect} from 'react-redux';
 import {signUpUser} from '../../redux/actions/authActionCreators';
-import styles from './signUp.styles';
+import styles from './SignUp.styles';
 
 const SignUp = ({dispatch, user, navigation}) => {
   useEffect(() => {

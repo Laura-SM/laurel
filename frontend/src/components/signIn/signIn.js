@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {signInUser} from '../../redux/actions/authActionCreators';
-import styles from './signIn.styles';
+import styles from './SignIn.styles';
 
 const SignIn = ({dispatch, userAccess, navigation}) => {
   useEffect(() => {

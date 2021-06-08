@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import styles from './cardPlant.styles';
+import styles from './CardPlant.styles';
 
 const CardPlant = ({plant}) => {
   const navigation = useNavigation();

@@ -1,11 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect} from 'react';
-import {Text, View, FlatList, ScrollView} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import React, {useEffect, useRef} from 'react';
+import {Text, View, FlatList, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import CardPlant from '../cardPlant/cardPlant';
-import styles from './plantsSearcher.styes';
+import CardPlant from '../CardPlant/CardPlant';
 import globalStyles from '../../styles/global.styles';
 
 const PlantsSearcher = ({plants, dispatch}) => {
@@ -15,38 +13,45 @@ const PlantsSearcher = ({plants, dispatch}) => {
     }
   }, [plants]);
 
-  const goUp = () => console.log('goUp');
+  const listRef = useRef(null);
+
+  const goUp = () => {
+    listRef.current.scrollToTop({offset: 0, animated: true});
+  };
 
   const filterSearch = () => console.log('filter');
 
   const renderCardPlant = ({item}) => <CardPlant plant={item} />;
 
   return (
-    <ScrollView style={globalStyles.mainContainer}>
-      <View style={globalStyles.headerContainer}>
-        <Text style={globalStyles.titleText}>Find a plant</Text>
-        <TouchableOpacity
-          style={globalStyles.roundButton}
-          onPress={filterSearch}>
-          <Text>Fi</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.plantsContainer} className="plants-menu">
-        <FlatList
-          // showsVerticalScrollIndicator={false}
-          // horizontal={false}
-          // numColumns={2}
-          data={plants}
-          renderItem={renderCardPlant}
-          keyExtractor={plant => plant._id}
-        />
-      </View>
-      <View style={globalStyles.bottomContainer}>
-        <TouchableOpacity style={globalStyles.roundButton} onPress={goUp}>
-          <Text>Up</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+    <FlatList
+      ref={listRef}
+      style={globalStyles.mainContainer}
+      ListHeaderComponent={
+        <>
+          <View style={globalStyles.headerContainer}>
+            <Text style={globalStyles.titleText}>Find a plant</Text>
+            <TouchableOpacity
+              style={globalStyles.roundButton}
+              onPress={filterSearch}>
+              <Text>Fi</Text>
+            </TouchableOpacity>
+          </View>
+        </>
+      }
+      data={plants}
+      renderItem={renderCardPlant}
+      keyExtractor={plant => plant._id}
+      ListFooterComponent={
+        <>
+          <View style={globalStyles.bottomContainer}>
+            <TouchableOpacity style={globalStyles.roundButton} onPress={goUp}>
+              <Text>Up</Text>
+            </TouchableOpacity>
+          </View>
+        </>
+      }
+    />
   );
 };
 
