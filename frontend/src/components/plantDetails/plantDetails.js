@@ -8,6 +8,7 @@ import globalStyles from '../../styles/global.styles';
 
 function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
   const {plantId} = route.params;
+
   useEffect(() => {
     dispatch(loadPlant(plantId));
   }, [plantId]);
