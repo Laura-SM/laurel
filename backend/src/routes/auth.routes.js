@@ -51,6 +51,7 @@ authRoutes.post(
               return res.json({
                 token,
                 refreshToken,
+                user,
               });
             },
           );

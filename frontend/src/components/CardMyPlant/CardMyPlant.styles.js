@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  plantsContainer: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  image: {
+    width: 250,
+    height: 250,
+    borderRadius: 10,
+    margin: 20,
   },
 });
 

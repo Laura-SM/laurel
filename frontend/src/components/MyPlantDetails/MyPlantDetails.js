@@ -3,18 +3,26 @@ import React, {useEffect} from 'react';
 import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlant} from '../../redux/actions/plantsActionCreators';
-import styles from './PlantDetails.styles';
+import styles from '../PlantDetails/PlantDetails.styles';
 import globalStyles from '../../styles/global.styles';
 
-function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
+function MyPlantDetails({
+  selectedPlant,
+  dispatch,
+  route,
+  navigation: {goBack},
+}) {
   const {plantId} = route.params;
 
   useEffect(() => {
-    dispatch(loadPlant(plantId));
+    if (!selectedPlant.name) {
+      dispatch(loadPlant(plantId));
+    }
   }, [plantId]);
 
   return (
     <ScrollView style={globalStyles.mainContainer}>
+      <Text>Vull que funcioni</Text>
       <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
@@ -44,4 +52,4 @@ function mapStateToProps({selectedPlant}) {
   };
 }
 
-export default connect(mapStateToProps)(PlantDetails);
+export default connect(mapStateToProps)(MyPlantDetails);

@@ -1,16 +1,18 @@
 import React from 'react';
 import {Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import styles from './CardPlant.styles';
+import styles from './CardMyPlant.styles';
 
-const CardPlant = ({plant}) => {
+const CardMyPlant = ({plant}) => {
   const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => navigation.navigate('PlantDetails', {plantId: plant._id})}>
+      onPress={() =>
+        navigation.navigate('MyPlantDetails', {plantId: plant._id})
+      }>
       <Image style={styles.image} source={{uri: plant.image}} />
     </Pressable>
   );
 };
 
-export default CardPlant;
+export default CardMyPlant;
