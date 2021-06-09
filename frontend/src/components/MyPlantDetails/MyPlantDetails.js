@@ -15,14 +15,11 @@ function MyPlantDetails({
   const {plantId} = route.params;
 
   useEffect(() => {
-    if (!selectedPlant.name) {
-      dispatch(loadPlant(plantId));
-    }
-  }, [plantId]);
+    dispatch(loadPlant(plantId));
+  }, [route.params]);
 
   return (
     <ScrollView style={globalStyles.mainContainer}>
-      <Text>Vull que funcioni</Text>
       <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}

@@ -11,7 +11,7 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
 
   useEffect(() => {
     dispatch(loadPlant(plantId));
-  }, [plantId]);
+  }, [route.params]);
 
   return (
     <ScrollView style={globalStyles.mainContainer}>
