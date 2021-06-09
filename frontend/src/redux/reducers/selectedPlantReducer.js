@@ -1,12 +1,12 @@
 import actionTypes from '../actions/actionTypes';
 
-function selectedPlantReducer(plant = {}, action) {
+function selectedPlantReducer(selectedPlant = {}, action) {
   switch (action.type) {
     case actionTypes.LOAD_PLANT:
-      return action.plant;
+      return action.selectedPlant;
 
     default:
-      return plant;
+      return selectedPlant;
   }
 }
 
