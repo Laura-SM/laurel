@@ -18,7 +18,7 @@ function plantsReducer(plants = [], action) {
       );
       break;
     default:
-      return updatedPlants;
+      return plants;
   }
   return updatedPlants;
 }
