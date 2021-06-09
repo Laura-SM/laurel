@@ -73,7 +73,7 @@ export function loadPlant(plantId) {
       const {data} = await axios(`${url}/${plantId}`);
       dispatch({
         type: actionTypes.LOAD_PLANT,
-        plant: data,
+        selectedPlant: data,
       });
     } catch (error) {
       dispatch({
