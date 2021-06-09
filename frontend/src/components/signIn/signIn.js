@@ -14,7 +14,7 @@ import styles from './SignIn.styles';
 
 const SignIn = ({dispatch, userAccess, navigation}) => {
   useEffect(() => {
-    userAccess.token && navigation.navigate('BottomNavigator');
+    userAccess.token && navigation.navigate('MyReminders');
   }, [userAccess, navigation]);
 
   let [email, setEmailInputValue] = useState('');
