@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a PlantsSearcher component When is invoked Then it is renders correctly 1`] = `
+<RCTScrollView
+  ListFooterComponent={
+    <React.Fragment>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <ForwardRef
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#B8E0D2",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": 20,
+              "width": 60,
+            }
+          }
+        >
+          <Text>
+            Up
+          </Text>
+        </ForwardRef>
+      </View>
+    </React.Fragment>
+  }
+  ListHeaderComponent={
+    <React.Fragment>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "margin": 20,
+            }
+          }
+        >
+          Find a plant
+        </Text>
+        <ForwardRef
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#B8E0D2",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": 20,
+              "width": 60,
+            }
+          }
+        >
+          <Text>
+            Fi
+          </Text>
+        </ForwardRef>
+      </View>
+    </React.Fragment>
+  }
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "margin": 20,
+            }
+          }
+        >
+          Find a plant
+        </Text>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#B8E0D2",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": 20,
+              "opacity": 1,
+              "width": 60,
+            }
+          }
+        >
+          <Text>
+            Fi
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#B8E0D2",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": 20,
+              "opacity": 1,
+              "width": 60,
+            }
+          }
+        >
+          <Text>
+            Up
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
