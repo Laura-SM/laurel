@@ -13,6 +13,7 @@ import CardMyPlant from './src/components/CardMyPlant/CardMyPlant';
 import MyReminders from './src/components/MyReminders/MyReminders';
 import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
 import MyPlants from './src/components/MyPlants/MyPlants';
+import AddPlant from './src/components/AddPlant/AddPlant';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,6 +31,7 @@ const App = () => {
               'CardPlant',
               'MyPlantDetails',
               'CardMyPlant',
+              'AddPlant',
             ].includes(route.name)
               ? () => {
                   return null;
@@ -56,6 +58,7 @@ const App = () => {
           <Tab.Screen name="CardPlant" component={CardPlant} />
           <Tab.Screen name="MyPlantDetails" component={MyPlantDetails} />
           <Tab.Screen name="CardMyPlant" component={CardMyPlant} />
+          <Tab.Screen name="AddPlant" component={AddPlant} />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

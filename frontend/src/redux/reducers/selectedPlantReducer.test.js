@@ -8,7 +8,7 @@ describe('Given selectedPlantReducer function ', () => {
         {},
         {
           type: actionTypes.LOAD_PLANT,
-          plant: {name: 'kentia'},
+          selectedPlant: {name: 'kentia'},
         },
       ),
     ).toEqual({name: 'kentia'});

@@ -53,7 +53,7 @@ describe('Given plantsReducer function ', () => {
     ]);
   });
 
-  test('when resolved with default, then should return updatedPlants', () => {
+  test('when resolved with default, then should return plants', () => {
     expect(
       plantsReducer(undefined, {
         type: actionTypes.PLANTS_ERROR,
