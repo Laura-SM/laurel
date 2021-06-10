@@ -1,32 +1,41 @@
-import React from 'react';
-import {Text, View, FlatList, TouchableOpacity} from 'react-native';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect} from 'react';
+import {Text, View, FlatList, TouchableOpacity, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
+import {useNavigation} from '@react-navigation/native';
+import {loadPlants} from '../../redux/actions/plantsActionCreators';
 import CardMyPlant from '../CardMyPlant/CardMyPlant';
 import globalStyles from '../../styles/global.styles';
 
-const MyPlants = ({plants, userAccess}) => {
-  const plantsList = plants;
-  const myPlantsIds = userAccess.user.plants;
-  let myPlantsList = [];
+const MyPlants = ({plants, userAccess, dispatch}) => {
+  useEffect(() => {
+    if (userAccess.user.plants.length) {
+      dispatch(loadPlants(userAccess.user.plants));
+    }
+  }, [userAccess.user.plants]);
+
+  const myPlantsIds = [...userAccess.user.plants];
+
+  console.log(myPlantsIds);
+
+  const myPlantsList = [];
   if (myPlantsIds.length) {
     myPlantsIds.forEach(id => {
-      let myPlant = plantsList.find(plant => plant._id === id);
+      let myPlant = plants.find(plant => plant._id === id);
       myPlantsList.push(myPlant);
     });
   }
-
-  console.log('MyPlants');
-  console.log(myPlantsList);
-  console.log(plants);
-
   const renderCardPlant = ({item}) => <CardMyPlant plant={item} />;
+  const navigation = useNavigation();
 
   return (
-    <View>
+    <ScrollView>
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>My plants</Text>
-        <TouchableOpacity style={globalStyles.roundButton}>
-          <Text>Fi</Text>
+        <TouchableOpacity
+          style={globalStyles.roundButton}
+          onPress={() => navigation.navigate('AddPlant')}>
+          <Text>+</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -37,7 +46,7 @@ const MyPlants = ({plants, userAccess}) => {
             keyExtractor={plant => plant._id}
           />
         ) : (
-          <Text>No tenim plantes</Text>
+          <Text>Add your plants!</Text>
         )}
       </View>
       <View style={globalStyles.bottomContainer}>
@@ -45,7 +54,7 @@ const MyPlants = ({plants, userAccess}) => {
           <Text>Up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
