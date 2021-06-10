@@ -103,7 +103,7 @@ describe('Given loadPlant function, ', () => {
     await loadPlant(plantId)(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: 'LOAD_PLANT',
-      plant: {name: 'kentia', plantId: 1},
+      selectedPlant: {name: 'kentia', plantId: 1},
     });
   });
 
