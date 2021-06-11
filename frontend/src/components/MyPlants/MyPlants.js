@@ -1,6 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, FlatList, TouchableOpacity, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+} from 'react-native';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
@@ -32,7 +39,7 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
         <TouchableOpacity
           style={globalStyles.roundButton}
           onPress={() => navigation.navigate('AddPlant')}>
-          <Text>+</Text>
+          <Image source={require('../../icons/add24.png')} />
         </TouchableOpacity>
       </View>
       <View>
@@ -48,7 +55,7 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
       </View>
       <View style={globalStyles.bottomContainer}>
         <TouchableOpacity style={globalStyles.roundButton}>
-          <Text>Up</Text>
+          <Image source={require('../../icons/goUp24.png')} />
         </TouchableOpacity>
       </View>
     </ScrollView>

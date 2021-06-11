@@ -33,7 +33,7 @@ const MyPlantDetails = ({
     <ScrollView style={globalStyles.mainContainer}>
       <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       <TouchableOpacity style={globalStyles.roundButton}>
-        <Text>Ed</Text>
+        <Image source={require('../../icons/edit24.png')} />
       </TouchableOpacity>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
@@ -51,12 +51,12 @@ const MyPlantDetails = ({
       <TouchableOpacity
         style={globalStyles.roundButton}
         onPress={() => goBack()}>
-        <Text>Back</Text>
+        <Image source={require('../../icons/goBack24.png')} />
       </TouchableOpacity>
       <TouchableOpacity
         style={globalStyles.roundButton}
         onPress={() => onPressDeletePlant()}>
-        <Text>Del</Text>
+        <Image source={require('../../icons/delete24.png')} />
       </TouchableOpacity>
     </ScrollView>
   );
