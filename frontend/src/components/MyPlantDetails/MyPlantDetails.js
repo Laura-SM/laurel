@@ -2,17 +2,28 @@
 import React, {useEffect} from 'react';
 import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {loadPlant} from '../../redux/actions/plantsActionCreators';
+import {deletePlant, loadPlant} from '../../redux/actions/plantsActionCreators';
+import {updateUser} from '../../redux/actions/usersActionCreators';
+import {useNavigation} from '@react-navigation/native';
 import styles from '../PlantDetails/PlantDetails.styles';
 import globalStyles from '../../styles/global.styles';
 
-function MyPlantDetails({
+const MyPlantDetails = ({
+  userAccess,
   selectedPlant,
   dispatch,
   route,
   navigation: {goBack},
-}) {
+}) => {
   const {plantId} = route.params;
+  const navigation = useNavigation();
+  let myPlantsIds = userAccess.user.plants;
+  const onPressDeletePlant = () => {
+    userAccess.user.plants = myPlantsIds.filter(id => id !== plantId);
+    dispatch(updateUser(userAccess.user));
+    dispatch(deletePlant(plantId));
+    navigation.navigate('MyPlants', {myPlantsIds: myPlantsIds});
+  };
 
   useEffect(() => {
     dispatch(loadPlant(plantId));
@@ -21,6 +32,9 @@ function MyPlantDetails({
   return (
     <ScrollView style={globalStyles.mainContainer}>
       <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
+      <TouchableOpacity style={globalStyles.roundButton}>
+        <Text>Ed</Text>
+      </TouchableOpacity>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
       </Text>
@@ -39,13 +53,19 @@ function MyPlantDetails({
         onPress={() => goBack()}>
         <Text>Back</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={globalStyles.roundButton}
+        onPress={() => onPressDeletePlant()}>
+        <Text>Del</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
-}
+};
 
-function mapStateToProps({selectedPlant}) {
+function mapStateToProps({selectedPlant, userAccess}) {
   return {
     selectedPlant,
+    userAccess,
   };
 }
 
