@@ -7,40 +7,32 @@ import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../../styles/global.styles';
 import styles from './AddPlant.styles';
 
-const AddPlant = ({
-  dispatch,
-  userAccess,
-  selectedPlant,
-  navigation: {goBack},
-}) => {
-  // const navigation = useNavigation();
+const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
+  const navigation = useNavigation();
   let [name, setPlantNameInputValue] = useState('');
   let [room, setRoomInputValue] = useState('');
-  // let [nextWaterDate, setNextWaterDateInputValue] = useState('');
-  // let [nextMistDate, setNextMistDateInputValue] = useState('');
-  // let [nextTransplantDate, setNextTransplantDateInputValue] = useState('');
-
+  let [nextWaterDate, setNextWaterDateInputValue] = useState('');
+  let [nextMistDate, setNextMistDateInputValue] = useState('');
+  let [nextTransplantDate, setNextTransplantDateInputValue] = useState('');
   let newPlant = {
     name,
     room,
-    // nextWaterDate,
-    // nextMistDate,
-    // nextTransplantDate,
+    nextWaterDate,
+    nextMistDate,
+    nextTransplantDate,
     card: false,
   };
-  const navigation = useNavigation();
-  const userPlantsIds = userAccess.user.plants;
-  const updateUserPlants = () => {
-    userPlantsIds.push(selectedPlant._id);
-    dispatch(updateUser(userAccess.user));
-    // navigation.navigate('MyPlants');
-    console.log(userPlantsIds);
-    navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+
+  const onPressAddPlant = () => {
+    dispatch(addPlant(newPlant));
   };
 
-  function onPressAddPlant() {
-    dispatch(addPlant(newPlant));
-  }
+  const userPlantsIds = userAccess.user.plants;
+  const updateUserPlantsAndGoBack = () => {
+    userPlantsIds.push(selectedPlant._id);
+    dispatch(updateUser(userAccess.user));
+    navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+  };
 
   return (
     <View>
@@ -64,7 +56,7 @@ const AddPlant = ({
         placeholder="Room"
         keyboardType="default"
       />
-      {/* <TextInput
+      <TextInput
         style={styles.input}
         onChangeText={text => setNextWaterDateInputValue(text)}
         value={nextWaterDate}
@@ -84,17 +76,10 @@ const AddPlant = ({
         value={nextTransplantDate}
         placeholder="Last transplant date"
         keyboardType="default"
-      /> */}
+      />
       <TouchableOpacity
         style={globalStyles.roundButton}
-        onPress={() =>
-          navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds})
-        }>
-        <Text>Back</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={globalStyles.roundButton}
-        onPress={() => updateUserPlants()}>
+        onPress={() => updateUserPlantsAndGoBack()}>
         <Text>Upd</Text>
       </TouchableOpacity>
     </View>
