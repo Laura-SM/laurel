@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import CardPlant from '../CardPlant/CardPlant';
 import globalStyles from '../../styles/global.styles';
@@ -16,7 +16,7 @@ const PlantsSearcher = ({plants}) => {
           <View style={globalStyles.headerContainer}>
             <Text style={globalStyles.titleText}>Find a plant</Text>
             <TouchableOpacity style={globalStyles.roundButton}>
-              <Text>Fi</Text>
+              <Image source={require('../../icons/filter24.png')} />
             </TouchableOpacity>
           </View>
         </>
@@ -28,7 +28,7 @@ const PlantsSearcher = ({plants}) => {
         <>
           <View style={globalStyles.bottomContainer}>
             <TouchableOpacity style={globalStyles.roundButton}>
-              <Text>Up</Text>
+              <Image source={require('../../icons/goUp24.png')} />
             </TouchableOpacity>
           </View>
         </>
