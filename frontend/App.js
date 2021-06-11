@@ -54,11 +54,23 @@ const App = () => {
           <Tab.Screen name="MyReminders" component={MyReminders} />
           <Tab.Screen name="PlantsSearcher" component={PlantsSearcher} />
           <Tab.Screen name="MyPlants" component={MyPlants} />
-          <Tab.Screen name="PlantDetails" component={PlantDetails} />
+          <Tab.Screen
+            name="PlantDetails"
+            component={PlantDetails}
+            options={{tabBarVisible: false}}
+          />
           <Tab.Screen name="CardPlant" component={CardPlant} />
-          <Tab.Screen name="MyPlantDetails" component={MyPlantDetails} />
+          <Tab.Screen
+            name="MyPlantDetails"
+            component={MyPlantDetails}
+            options={{tabBarVisible: false}}
+          />
           <Tab.Screen name="CardMyPlant" component={CardMyPlant} />
-          <Tab.Screen name="AddPlant" component={AddPlant} />
+          <Tab.Screen
+            name="AddPlant"
+            component={AddPlant}
+            options={{tabBarVisible: false}}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

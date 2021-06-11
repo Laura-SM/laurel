@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlant} from '../../redux/actions/plantsActionCreators';
 import styles from './PlantDetails.styles';
@@ -14,8 +14,10 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
   }, [route.params]);
 
   return (
-    <ScrollView style={globalStyles.mainContainer}>
-      <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
+    <View style={globalStyles.mainContainer}>
+      <View>
+        <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
+      </View>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
       </Text>
@@ -29,12 +31,14 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
         </View>
       </View>
       <Text style={globalStyles.text}>{selectedPlant.info}</Text>
-      <TouchableOpacity
-        style={globalStyles.roundButton}
-        onPress={() => goBack()}>
-        <Text>Back</Text>
-      </TouchableOpacity>
-    </ScrollView>
+      <View style={globalStyles.bottomContainer}>
+        <TouchableOpacity
+          style={globalStyles.roundButton}
+          onPress={() => goBack()}>
+          <Text>Back</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
