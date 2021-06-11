@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View, TouchableOpacity} from 'react-native';
+import {Text, TextInput, View, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {addPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
@@ -40,7 +40,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
       <TouchableOpacity
         style={globalStyles.roundButton}
         onPress={onPressAddPlant}>
-        <Text style={styles.textButton}>Add</Text>
+        <Image source={require('../../icons/done24.png')} />
       </TouchableOpacity>
       <TextInput
         style={styles.input}
@@ -80,7 +80,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
       <TouchableOpacity
         style={globalStyles.roundButton}
         onPress={() => updateUserPlantsAndGoBack()}>
-        <Text>Upd</Text>
+        <Image source={require('../../icons/goBack24.png')} />
       </TouchableOpacity>
     </View>
   );
