@@ -8,16 +8,8 @@ import CardMyPlant from '../CardMyPlant/CardMyPlant';
 import globalStyles from '../../styles/global.styles';
 
 const MyPlants = ({plants, userAccess, dispatch}) => {
-  useEffect(() => {
-    if (userAccess.user.plants.length) {
-      dispatch(loadPlants(userAccess.user.plants));
-    }
-  }, [userAccess.user.plants]);
-
+  const navigation = useNavigation();
   const myPlantsIds = [...userAccess.user.plants];
-
-  console.log(myPlantsIds);
-
   const myPlantsList = [];
   if (myPlantsIds.length) {
     myPlantsIds.forEach(id => {
@@ -26,7 +18,12 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
     });
   }
   const renderCardPlant = ({item}) => <CardMyPlant plant={item} />;
-  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (userAccess.user.plants.length) {
+      dispatch(loadPlants(userAccess.user.plants));
+    }
+  }, [userAccess.user.plants]);
 
   return (
     <ScrollView>
