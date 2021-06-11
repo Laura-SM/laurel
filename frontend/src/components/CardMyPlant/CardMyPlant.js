@@ -6,15 +6,13 @@ import styles from './CardMyPlant.styles';
 const CardMyPlant = ({plant}) => {
   const navigation = useNavigation();
   return (
-    <>
+    <Pressable
+      onPress={() =>
+        navigation.navigate('MyPlantDetails', {plantId: plant._id})
+      }>
       <Text>{plant.name}</Text>
-      <Pressable
-        onPress={() =>
-          navigation.navigate('MyPlantDetails', {plantId: plant._id})
-        }>
-        <Image style={styles.image} source={{uri: plant.image}} />
-      </Pressable>
-    </>
+      <Image style={styles.image} source={{uri: plant.image}} />
+    </Pressable>
   );
 };
 
