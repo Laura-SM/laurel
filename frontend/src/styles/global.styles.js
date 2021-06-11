@@ -11,8 +11,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bottomContainer: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   titleText: {
     fontSize: 24,
