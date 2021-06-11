@@ -24,9 +24,13 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
       <View style={styles.featuresContainer}>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
         <View>
+          <Image source={require('../../icons/water24.png')} />
           <Text>{selectedPlant.waterNeeds}</Text>
+          <Image source={require('../../icons/mist24.png')} />
           <Text>{selectedPlant.mistNeeds}</Text>
+          <Image source={require('../../icons/sun24.png')} />
           <Text>{selectedPlant.lightNeeds}</Text>
+          <Image source={require('../../icons/pets24.png')} />
           <Text>{selectedPlant.petFriendly}</Text>
         </View>
       </View>
@@ -35,7 +39,7 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
         <TouchableOpacity
           style={globalStyles.roundButton}
           onPress={() => goBack()}>
-          <Text>Back</Text>
+          <Image source={require('../../icons/goBack24.png')} />
         </TouchableOpacity>
       </View>
     </View>
