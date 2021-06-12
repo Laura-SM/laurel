@@ -14,12 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../../styles/global.styles';
 import styles from './AddPlant.styles';
 
-const AddPlant = ({
-  dispatch,
-  userAccess,
-  selectedPlant,
-  navigation: {goBack},
-}) => {
+const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
   const navigation = useNavigation();
   let [name, setPlantNameInputValue] = useState('');
   let [room, setRoomInputValue] = useState('');
@@ -34,31 +29,35 @@ const AddPlant = ({
     nextTransplantDate,
     card: false,
   };
-
   const onPressAddPlant = () => {
     dispatch(addPlant(newPlant));
   };
-
   const userPlantsIds = userAccess.user.plants;
   const updateUserPlantsAndGoBack = () => {
-    userPlantsIds.push(selectedPlant._id);
-    dispatch(updateUser(userAccess.user));
-    navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+    if (selectedPlant.card) {
+      navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+    } else {
+      if (userPlantsIds.includes(selectedPlant._id)) {
+        navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+      } else {
+        userPlantsIds.push(selectedPlant._id);
+        dispatch(updateUser(userAccess.user));
+        navigation.navigate('MyPlants', {myPlantsIds: userPlantsIds});
+      }
+    }
   };
 
   return (
     <ScrollView style={globalStyles.mainContainer}>
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>Add plant</Text>
-        <TouchableOpacity
-          style={globalStyles.roundButton}
-          onPress={onPressAddPlant}>
-          <Image source={require('../../icons/done24.png')} />
-        </TouchableOpacity>
       </View>
       <View style={styles.centralContainer}>
         <Text style={styles.imageText}>Add a photo of your plant</Text>
-        <Image style={styles.image} source={{uri: selectedPlant.image}} />
+        <Image
+          style={styles.image}
+          source={require('../../icons/flower48.png')}
+        />
         <View style={styles.featuresContainer}>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/description24.png')} />
@@ -111,20 +110,19 @@ const AddPlant = ({
             />
           </View>
         </View>
+        <TouchableOpacity
+          style={globalStyles.submitButton}
+          onPress={onPressAddPlant}>
+          <Image source={require('../../icons/done24.png')} />
+        </TouchableOpacity>
       </View>
       <View style={globalStyles.bottomContainer}>
         <TouchableOpacity
           style={globalStyles.roundButton}
-          onPress={() => goBack()}>
+          onPress={() => updateUserPlantsAndGoBack()}>
           <Image source={require('../../icons/goBack24.png')} />
         </TouchableOpacity>
       </View>
-
-      <TouchableOpacity
-        style={globalStyles.roundButton}
-        onPress={() => updateUserPlantsAndGoBack()}>
-        <Image source={require('../../icons/goBack24.png')} />
-      </TouchableOpacity>
     </ScrollView>
   );
 };
