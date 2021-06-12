@@ -10,58 +10,59 @@ import {
 import {connect} from 'react-redux';
 import {signInUser} from '../../redux/actions/authActionCreators';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import styles from './SignIn.styles';
+import globalStyles from '../../styles/global.styles';
+import authStyles from '../../styles/auth.styles';
 
 const SignIn = ({dispatch, userAccess, navigation}) => {
-  useEffect(() => {
-    userAccess.token && navigation.navigate('MyReminders');
-  }, [userAccess, navigation]);
-
   let [email, setEmailInputValue] = useState('');
   let [password, setPasswordInputValue] = useState('');
-
   const onPressSignIn = () => {
     dispatch(signInUser({email, password}));
   };
-
   if (userAccess.token) {
     dispatch(loadPlants());
   }
 
+  useEffect(() => {
+    userAccess.user && navigation.navigate('MyReminders');
+  }, [userAccess, navigation]);
+
   return (
-    <View style={styles.mainView}>
+    <View style={authStyles.mainContainer}>
       <Image
-        style={styles.logo}
+        style={authStyles.logo}
         source={{
           uri: 'https://i.ibb.co/pbFgzLP/laurel-logo.png',
         }}
       />
-
       <TextInput
-        style={styles.input}
+        style={authStyles.input}
         onChangeText={text => setEmailInputValue(text)}
         value={email}
         placeholder="email"
         keyboardType="default"
       />
       <TextInput
-        style={styles.input}
+        style={authStyles.input}
         onChangeText={text => setPasswordInputValue(text)}
         value={password}
         placeholder="password"
-        keyboardType="numeric"
+        keyboardType="default"
+        secureTextEntry={true}
       />
-
-      <TouchableOpacity style={styles.button} onPress={onPressSignIn}>
-        <Text style={styles.textButton}>Sign In</Text>
+      <TouchableOpacity
+        style={globalStyles.submitButton}
+        onPress={onPressSignIn}>
+        <Text style={authStyles.buttonText}>Sign In</Text>
       </TouchableOpacity>
-
-      <Pressable onPress={() => navigation.navigate('SignUp')}>
-        <Text style={styles.text}>
-          Don't have an account?{' '}
-          <Text style={styles.underlineText}>Create new</Text>
-        </Text>
-      </Pressable>
+      <View style={authStyles.bottomContainer}>
+        <Pressable onPress={() => navigation.navigate('SignUp')}>
+          <Text style={globalStyles.text}>
+            Don't have an account?{' '}
+            <Text style={authStyles.underlineText}>Create new</Text>
+          </Text>
+        </Pressable>
+      </View>
     </View>
   );
 };
