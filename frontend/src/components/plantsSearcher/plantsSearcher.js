@@ -12,26 +12,22 @@ const PlantsSearcher = ({plants}) => {
     <FlatList
       style={globalStyles.mainContainer}
       ListHeaderComponent={
-        <>
-          <View style={globalStyles.headerContainer}>
-            <Text style={globalStyles.titleText}>Find a plant</Text>
-            <TouchableOpacity style={globalStyles.roundButton}>
-              <Image source={require('../../icons/filter24.png')} />
-            </TouchableOpacity>
-          </View>
-        </>
+        <View style={globalStyles.headerContainer}>
+          <Text style={globalStyles.titleText}>Find a plant</Text>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/filter24.png')} />
+          </TouchableOpacity>
+        </View>
       }
       data={plantsList}
       renderItem={renderPlantCard}
       keyExtractor={plant => plant._id}
       ListFooterComponent={
-        <>
-          <View style={globalStyles.bottomContainer}>
-            <TouchableOpacity style={globalStyles.roundButton}>
-              <Image source={require('../../icons/goUp24.png')} />
-            </TouchableOpacity>
-          </View>
-        </>
+        <View style={globalStyles.bottomContainer}>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/goUp24.png')} />
+          </TouchableOpacity>
+        </View>
       }
     />
   );
