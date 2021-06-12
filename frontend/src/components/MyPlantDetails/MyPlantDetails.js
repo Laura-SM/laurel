@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {deletePlant, loadPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
 import {useNavigation} from '@react-navigation/native';
-import styles from '../PlantDetails/PlantDetails.styles';
+import styles from './MyPlantDetails.style';
 import globalStyles from '../../styles/global.styles';
 
 const MyPlantDetails = ({
@@ -30,35 +30,51 @@ const MyPlantDetails = ({
   }, [route.params]);
 
   return (
-    <ScrollView style={globalStyles.mainContainer}>
-      <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
-      <TouchableOpacity style={globalStyles.roundButton}>
-        <Image source={require('../../icons/edit24.png')} />
-      </TouchableOpacity>
-      <Text style={globalStyles.subTitleText}>
-        {selectedPlant.scientificName}
-      </Text>
-      <View style={styles.featuresContainer}>
-        <Image style={styles.image} source={{uri: selectedPlant.image}} />
-        <View>
-          <Text>{selectedPlant.waterNeeds}</Text>
-          <Text>{selectedPlant.mistNeeds}</Text>
-          <Text>{selectedPlant.lightNeeds}</Text>
-          <Text>{selectedPlant.petFriendly}</Text>
+    <View style={globalStyles.mainContainer}>
+      <View style={globalStyles.headerContainer}>
+        <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
+        <View style={styles.topButtonsContainer}>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/edit24.png')} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={globalStyles.roundButton}
+            onPress={() => onPressDeletePlant()}>
+            <Image source={require('../../icons/delete24.png')} />
+          </TouchableOpacity>
         </View>
       </View>
-      <Text style={globalStyles.text}>{selectedPlant.info}</Text>
-      <TouchableOpacity
-        style={globalStyles.roundButton}
-        onPress={() => goBack()}>
-        <Image source={require('../../icons/goBack24.png')} />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={globalStyles.roundButton}
-        onPress={() => onPressDeletePlant()}>
-        <Image source={require('../../icons/delete24.png')} />
-      </TouchableOpacity>
-    </ScrollView>
+      <View style={styles.centralContainer}>
+        <Image style={styles.image} source={{uri: selectedPlant.image}} />
+        <View style={styles.featuresContainer}>
+          <View style={styles.iconsContainer}>
+            <Image source={require('../../icons/room24.png')} />
+            <Text style={globalStyles.text}>{selectedPlant.room}</Text>
+          </View>
+          <View style={styles.iconsContainer}>
+            <Image source={require('../../icons/water24.png')} />
+            <Text style={globalStyles.text}>{selectedPlant.nextWaterDate}</Text>
+          </View>
+          <View style={styles.iconsContainer}>
+            <Image source={require('../../icons/mist24.png')} />
+            <Text style={globalStyles.text}>{selectedPlant.nextMistDate}</Text>
+          </View>
+          <View style={styles.iconsContainer}>
+            <Image source={require('../../icons/settings24.png')} />
+            <Text style={globalStyles.text}>
+              {selectedPlant.nextTransplantDate}
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View style={globalStyles.bottomContainer}>
+        <TouchableOpacity
+          style={globalStyles.roundButton}
+          onPress={() => goBack()}>
+          <Image source={require('../../icons/goBack24.png')} />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 

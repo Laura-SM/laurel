@@ -1,16 +1,26 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  topButtonsContainer: {
+    flexDirection: 'row',
+  },
+  centralContainer: {
+    alignItems: 'center',
+  },
   image: {
-    width: 170,
-    height: 250,
+    width: 290,
+    height: 290,
     borderRadius: 10,
     margin: 20,
+    backgroundColor: '#E5E5E5',
   },
   featuresContainer: {
+    width: 300,
+    alignItems: 'flex-start',
+  },
+  iconsContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
+    marginVertical: 10,
   },
 });
 
