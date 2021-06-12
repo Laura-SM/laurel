@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
-import CardPlant from '../CardPlant/CardPlant';
+import PlantCard from '../PlantCard/PlantCard';
 import globalStyles from '../../styles/global.styles';
 
 const PlantsSearcher = ({plants}) => {
   const plantsList = plants.filter(plant => plant.card === true);
-  const renderCardPlant = ({item}) => <CardPlant plant={item} />;
+  const renderPlantCard = ({item}) => <PlantCard plant={item} />;
 
   return (
     <FlatList
@@ -22,7 +22,7 @@ const PlantsSearcher = ({plants}) => {
         </>
       }
       data={plantsList}
-      renderItem={renderCardPlant}
+      renderItem={renderPlantCard}
       keyExtractor={plant => plant._id}
       ListFooterComponent={
         <>

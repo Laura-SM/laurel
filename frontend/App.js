@@ -7,7 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SignIn from './src/components/SignIn/SignIn';
 import SignUp from './src/components/SignUp/SignUp';
 import PlantDetails from './src/components/PlantDetails/PlantDetails';
-import CardPlant from './src/components/CardPlant/CardPlant';
+import PlantCard from './src/components/PlantCard/PlantCard';
 import MyPlantDetails from './src/components/MyPlantDetails/MyPlantDetails';
 import CardMyPlant from './src/components/CardMyPlant/CardMyPlant';
 import MyReminders from './src/components/MyReminders/MyReminders';
@@ -28,7 +28,7 @@ const App = () => {
               'SignIn',
               'SignUp',
               'PlantDetails',
-              'CardPlant',
+              'PlantCard',
               'MyPlantDetails',
               'CardMyPlant',
               'AddPlant',
@@ -59,7 +59,7 @@ const App = () => {
             component={PlantDetails}
             options={{tabBarVisible: false}}
           />
-          <Tab.Screen name="CardPlant" component={CardPlant} />
+          <Tab.Screen name="PlantCard" component={PlantCard} />
           <Tab.Screen
             name="MyPlantDetails"
             component={MyPlantDetails}
