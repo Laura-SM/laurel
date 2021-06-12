@@ -2,14 +2,14 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   cardContainer: {
-    width: 175,
-    height: 175,
+    width: 165,
+    height: 165,
     borderWidth: 2,
     borderColor: '#93B1A7',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
+    marginLeft: 20,
   },
   image: {
     width: 100,
