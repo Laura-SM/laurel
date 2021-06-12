@@ -9,7 +9,7 @@ import SignUp from './src/components/SignUp/SignUp';
 import PlantDetails from './src/components/PlantDetails/PlantDetails';
 import PlantCard from './src/components/PlantCard/PlantCard';
 import MyPlantDetails from './src/components/MyPlantDetails/MyPlantDetails';
-import CardMyPlant from './src/components/CardMyPlant/CardMyPlant';
+import MyPlantCard from './src/components/MyPlantCard/MyPlantCard';
 import MyReminders from './src/components/MyReminders/MyReminders';
 import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
 import MyPlants from './src/components/MyPlants/MyPlants';
@@ -30,7 +30,7 @@ const App = () => {
               'PlantDetails',
               'PlantCard',
               'MyPlantDetails',
-              'CardMyPlant',
+              'MyPlantCard',
               'AddPlant',
             ].includes(route.name)
               ? () => {
@@ -65,7 +65,7 @@ const App = () => {
             component={MyPlantDetails}
             options={{tabBarVisible: false}}
           />
-          <Tab.Screen name="CardMyPlant" component={CardMyPlant} />
+          <Tab.Screen name="MyPlantCard" component={MyPlantCard} />
           <Tab.Screen
             name="AddPlant"
             component={AddPlant}
