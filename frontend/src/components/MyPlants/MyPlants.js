@@ -28,6 +28,9 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
   return (
     <FlatList
       style={globalStyles.mainContainer}
+      ListEmptyComponent={
+        <Text style={globalStyles.text}>Add your plants!</Text>
+      }
       ListHeaderComponent={
         <View style={globalStyles.headerContainer}>
           <Text style={globalStyles.titleText}>My plants</Text>
