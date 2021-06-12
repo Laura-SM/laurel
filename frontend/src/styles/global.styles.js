@@ -26,6 +26,11 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginHorizontal: 20,
   },
+  boldText: {
+    fontSize: 18,
+    marginHorizontal: 20,
+    fontWeight: 'bold',
+  },
   text: {
     fontSize: 18,
     marginHorizontal: 20,
