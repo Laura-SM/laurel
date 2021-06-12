@@ -1,37 +1,33 @@
 import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
-import CardPlant from '../CardPlant/CardPlant';
+import PlantCard from '../PlantCard/PlantCard';
 import globalStyles from '../../styles/global.styles';
 
 const PlantsSearcher = ({plants}) => {
   const plantsList = plants.filter(plant => plant.card === true);
-  const renderCardPlant = ({item}) => <CardPlant plant={item} />;
+  const renderPlantCard = ({item}) => <PlantCard plant={item} />;
 
   return (
     <FlatList
       style={globalStyles.mainContainer}
       ListHeaderComponent={
-        <>
-          <View style={globalStyles.headerContainer}>
-            <Text style={globalStyles.titleText}>Find a plant</Text>
-            <TouchableOpacity style={globalStyles.roundButton}>
-              <Image source={require('../../icons/filter24.png')} />
-            </TouchableOpacity>
-          </View>
-        </>
+        <View style={globalStyles.headerContainer}>
+          <Text style={globalStyles.titleText}>Find a plant</Text>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/filter24.png')} />
+          </TouchableOpacity>
+        </View>
       }
       data={plantsList}
-      renderItem={renderCardPlant}
+      renderItem={renderPlantCard}
       keyExtractor={plant => plant._id}
       ListFooterComponent={
-        <>
-          <View style={globalStyles.bottomContainer}>
-            <TouchableOpacity style={globalStyles.roundButton}>
-              <Image source={require('../../icons/goUp24.png')} />
-            </TouchableOpacity>
-          </View>
-        </>
+        <View style={globalStyles.bottomContainer}>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/goUp24.png')} />
+          </TouchableOpacity>
+        </View>
       }
     />
   );

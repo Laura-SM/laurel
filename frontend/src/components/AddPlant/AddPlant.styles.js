@@ -1,45 +1,34 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  mainView: {
-    flex: 1,
-    backgroundColor: '#D6EADF',
-    justifyContent: 'center',
+  centralContainer: {
     alignItems: 'center',
   },
-  logo: {
-    width: 300,
-    height: 300,
-    marginTop: 60,
-  },
-  button: {
-    width: 150,
-    height: 65,
-    backgroundColor: '#B8E0D2',
-    justifyContent: 'center',
-    alignItems: 'center',
+  image: {
+    width: 230,
+    height: 230,
     borderRadius: 10,
+    margin: 20,
+    backgroundColor: '#E5E5E5',
   },
-  textButton: {
-    fontSize: 24,
+  featuresContainer: {
+    width: 320,
+    alignItems: 'flex-start',
   },
-  text: {
-    fontSize: 18,
-  },
-  underlineText: {
-    textDecorationLine: 'underline',
-    fontSize: 18,
+  iconsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
   },
   input: {
-    width: 350,
-    height: 50,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: 250,
+    height: 45,
+    backgroundColor: '#E5E5E5',
     borderRadius: 10,
     fontSize: 20,
-    margin: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    textAlignVertical: 'center',
+    marginHorizontal: 10,
   },
 });
 

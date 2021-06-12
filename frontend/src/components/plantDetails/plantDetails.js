@@ -15,23 +15,76 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
 
   return (
     <View style={globalStyles.mainContainer}>
-      <View>
+      <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       </View>
       <Text style={globalStyles.subTitleText}>
         {selectedPlant.scientificName}
       </Text>
-      <View style={styles.featuresContainer}>
+      <View style={styles.centralContainer}>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
-        <View>
-          <Image source={require('../../icons/water24.png')} />
-          <Text>{selectedPlant.waterNeeds}</Text>
-          <Image source={require('../../icons/mist24.png')} />
-          <Text>{selectedPlant.mistNeeds}</Text>
-          <Image source={require('../../icons/sun24.png')} />
-          <Text>{selectedPlant.lightNeeds}</Text>
-          <Image source={require('../../icons/pets24.png')} />
-          <Text>{selectedPlant.petFriendly}</Text>
+        <View style={styles.featuresContainer}>
+          <View style={styles.iconsContainer}>
+            {selectedPlant.waterNeeds === 1 && (
+              <Image source={require('../../icons/water24.png')} />
+            )}
+            {selectedPlant.waterNeeds === 2 && (
+              <>
+                <Image source={require('../../icons/water24.png')} />
+                <Image source={require('../../icons/water24.png')} />
+              </>
+            )}
+            {selectedPlant.waterNeeds === 3 && (
+              <>
+                <Image source={require('../../icons/water24.png')} />
+                <Image source={require('../../icons/water24.png')} />
+                <Image source={require('../../icons/water24.png')} />
+              </>
+            )}
+          </View>
+          <View style={styles.iconsContainer}>
+            {selectedPlant.mistNeeds === 1 && (
+              <Image source={require('../../icons/mist24.png')} />
+            )}
+            {selectedPlant.mistNeeds === 2 && (
+              <>
+                <Image source={require('../../icons/mist24.png')} />
+                <Image source={require('../../icons/mist24.png')} />
+              </>
+            )}
+            {selectedPlant.mistNeeds === 3 && (
+              <>
+                <Image source={require('../../icons/mist24.png')} />
+                <Image source={require('../../icons/mist24.png')} />
+                <Image source={require('../../icons/mist24.png')} />
+              </>
+            )}
+          </View>
+          <View style={styles.iconsContainer}>
+            {selectedPlant.lightNeeds === 1 && (
+              <Image source={require('../../icons/sun24.png')} />
+            )}
+            {selectedPlant.lightNeeds === 2 && (
+              <>
+                <Image source={require('../../icons/sun24.png')} />
+                <Image source={require('../../icons/sun24.png')} />
+              </>
+            )}
+            {selectedPlant.lightNeeds === 3 && (
+              <>
+                <Image source={require('../../icons/sun24.png')} />
+                <Image source={require('../../icons/sun24.png')} />
+                <Image source={require('../../icons/sun24.png')} />
+              </>
+            )}
+          </View>
+          <View style={styles.iconsContainer}>
+            {selectedPlant.petFriendly ? (
+              <Image source={require('../../icons/pets24.png')} />
+            ) : (
+              <Image source={require('../../icons/dangerous24.png')} />
+            )}
+          </View>
         </View>
       </View>
       <Text style={globalStyles.text}>{selectedPlant.info}</Text>

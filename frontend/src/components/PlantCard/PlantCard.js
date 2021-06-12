@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, Pressable, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import styles from './CardPlant.styles';
+import styles from './PlantCard.styles';
 
-const CardPlant = ({plant}) => {
+const PlantCard = ({plant}) => {
   const navigation = useNavigation();
   return (
     <Pressable
@@ -17,4 +17,4 @@ const CardPlant = ({plant}) => {
   );
 };
 
-export default CardPlant;
+export default PlantCard;

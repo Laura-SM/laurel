@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    height: 80,
   },
   bottomContainer: {
     flex: 1,
@@ -25,6 +26,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontStyle: 'italic',
     marginHorizontal: 20,
+  },
+  boldText: {
+    fontSize: 18,
+    marginHorizontal: 20,
+    fontWeight: 'bold',
   },
   text: {
     fontSize: 18,

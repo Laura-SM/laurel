@@ -7,9 +7,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SignIn from './src/components/SignIn/SignIn';
 import SignUp from './src/components/SignUp/SignUp';
 import PlantDetails from './src/components/PlantDetails/PlantDetails';
-import CardPlant from './src/components/CardPlant/CardPlant';
+import PlantCard from './src/components/PlantCard/PlantCard';
 import MyPlantDetails from './src/components/MyPlantDetails/MyPlantDetails';
-import CardMyPlant from './src/components/CardMyPlant/CardMyPlant';
+import MyPlantCard from './src/components/MyPlantCard/MyPlantCard';
 import MyReminders from './src/components/MyReminders/MyReminders';
 import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
 import MyPlants from './src/components/MyPlants/MyPlants';
@@ -28,9 +28,9 @@ const App = () => {
               'SignIn',
               'SignUp',
               'PlantDetails',
-              'CardPlant',
+              'PlantCard',
               'MyPlantDetails',
-              'CardMyPlant',
+              'MyPlantCard',
               'AddPlant',
             ].includes(route.name)
               ? () => {
@@ -59,13 +59,13 @@ const App = () => {
             component={PlantDetails}
             options={{tabBarVisible: false}}
           />
-          <Tab.Screen name="CardPlant" component={CardPlant} />
+          <Tab.Screen name="PlantCard" component={PlantCard} />
           <Tab.Screen
             name="MyPlantDetails"
             component={MyPlantDetails}
             options={{tabBarVisible: false}}
           />
-          <Tab.Screen name="CardMyPlant" component={CardMyPlant} />
+          <Tab.Screen name="MyPlantCard" component={MyPlantCard} />
           <Tab.Screen
             name="AddPlant"
             component={AddPlant}
