@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  topButtonsContainer: {
-    flexDirection: 'row',
-  },
   centralContainer: {
     alignItems: 'center',
   },

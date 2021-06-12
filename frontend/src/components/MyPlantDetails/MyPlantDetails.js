@@ -33,16 +33,11 @@ const MyPlantDetails = ({
     <View style={globalStyles.mainContainer}>
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
-        <View style={styles.topButtonsContainer}>
-          <TouchableOpacity style={globalStyles.roundButton}>
-            <Image source={require('../../icons/edit24.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={globalStyles.roundButton}
-            onPress={() => onPressDeletePlant()}>
-            <Image source={require('../../icons/delete24.png')} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          style={globalStyles.roundButton}
+          onPress={() => onPressDeletePlant()}>
+          <Image source={require('../../icons/delete24.png')} />
+        </TouchableOpacity>
       </View>
       <View style={styles.centralContainer}>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
