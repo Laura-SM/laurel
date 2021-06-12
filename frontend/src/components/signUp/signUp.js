@@ -37,7 +37,7 @@ const SignUp = ({dispatch, user, navigation}) => {
         value={email}
         placeholder="email"
         keyboardType="default"
-        textContentType="emailAddres"
+        textContentType="emailAddress"
       />
       <TextInput
         style={authStyles.input}
