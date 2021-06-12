@@ -1,15 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  mainView: {
+  mainContainer: {
     flex: 1,
     backgroundColor: '#D6EADF',
-    justifyContent: 'center',
     alignItems: 'center',
   },
   logo: {
-    width: 300,
-    height: 300,
+    width: 320,
+    height: 290,
     marginTop: 60,
   },
   input: {
@@ -23,19 +22,15 @@ const styles = StyleSheet.create({
     margin: 5,
     paddingHorizontal: 10,
   },
-  button: {
-    width: 150,
-    height: 65,
-    backgroundColor: '#B8E0D2',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-  },
-  textButton: {
+  buttonText: {
     fontSize: 24,
   },
-  text: {
-    fontSize: 18,
+  bottomContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    margin: 20,
   },
   underlineText: {
     textDecorationLine: 'underline',
