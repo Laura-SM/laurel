@@ -57,7 +57,7 @@ const AddPlant = ({
         </TouchableOpacity>
       </View>
       <View style={styles.centralContainer}>
-        <Text>Add a photo of your plant</Text>
+        <Text style={styles.imageText}>Add a photo of your plant</Text>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
         <View style={styles.featuresContainer}>
           <View style={styles.iconsContainer}>

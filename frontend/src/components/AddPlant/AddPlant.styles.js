@@ -4,6 +4,13 @@ const styles = StyleSheet.create({
   centralContainer: {
     alignItems: 'center',
   },
+  imageText: {
+    position: 'absolute',
+    top: 125,
+    left: 95,
+    zIndex: 1,
+    fontSize: 18,
+  },
   image: {
     width: 230,
     height: 230,
