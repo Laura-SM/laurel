@@ -15,7 +15,7 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
 
   return (
     <View style={globalStyles.mainContainer}>
-      <View>
+      <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       </View>
       <Text style={globalStyles.subTitleText}>
