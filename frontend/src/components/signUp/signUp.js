@@ -37,6 +37,7 @@ const SignUp = ({dispatch, user, navigation}) => {
         value={email}
         placeholder="email"
         keyboardType="default"
+        textContentType="emailAddres"
       />
       <TextInput
         style={authStyles.input}
@@ -44,6 +45,7 @@ const SignUp = ({dispatch, user, navigation}) => {
         value={password}
         placeholder="password"
         keyboardType="default"
+        textContentType="password"
         secureTextEntry={true}
       />
       <TouchableOpacity
