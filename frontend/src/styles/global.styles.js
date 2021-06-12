@@ -45,6 +45,15 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     margin: 20,
   },
+  submitButton: {
+    width: 150,
+    height: 65,
+    backgroundColor: '#B8E0D2',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    margin: 20,
+  },
 });
 
 export default styles;
