@@ -41,13 +41,8 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
       data={myPlantsList}
       renderItem={renderMyPlantCard}
       keyExtractor={plant => plant._id}
-      ListFooterComponent={
-        <View style={globalStyles.bottomContainer}>
-          <TouchableOpacity style={globalStyles.roundButton}>
-            <Image source={require('../../icons/goUp24.png')} />
-          </TouchableOpacity>
-        </View>
-      }
+      horizontal={false}
+      numColumns={2}
     />
   );
 };
