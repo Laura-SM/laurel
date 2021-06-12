@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://192.168.0.57:2021';
+const url = 'http://192.168.1.141:2021';
 
 export function signInUser(user) {
   return async dispatch => {
