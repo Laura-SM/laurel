@@ -41,7 +41,7 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
         value={email}
         placeholder="email"
         keyboardType="default"
-        textContentType="emailAddres"
+        textContentType="emailAddress"
       />
       <TextInput
         style={authStyles.input}
