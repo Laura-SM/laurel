@@ -1,17 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import CardMyPlant from '../CardMyPlant/CardMyPlant';
+import MyPlantCard from '../MyPlantCard/MyPlantCard';
 import globalStyles from '../../styles/global.styles';
 
 const MyPlants = ({plants, userAccess, dispatch}) => {
@@ -24,7 +17,7 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
       myPlantsList.push(myPlant);
     });
   }
-  const renderCardPlant = ({item}) => <CardMyPlant plant={item} />;
+  const renderMyPlantCard = ({item}) => <MyPlantCard plant={item} />;
 
   useEffect(() => {
     if (userAccess.user.plants.length) {
@@ -33,32 +26,29 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
   }, [userAccess.user.plants]);
 
   return (
-    <ScrollView>
-      <View style={globalStyles.headerContainer}>
-        <Text style={globalStyles.titleText}>My plants</Text>
-        <TouchableOpacity
-          style={globalStyles.roundButton}
-          onPress={() => navigation.navigate('AddPlant')}>
-          <Image source={require('../../icons/add24.png')} />
-        </TouchableOpacity>
-      </View>
-      <View>
-        {myPlantsList[0] ? (
-          <FlatList
-            data={myPlantsList}
-            renderItem={renderCardPlant}
-            keyExtractor={plant => plant._id}
-          />
-        ) : (
-          <Text>Add your plants!</Text>
-        )}
-      </View>
-      <View style={globalStyles.bottomContainer}>
-        <TouchableOpacity style={globalStyles.roundButton}>
-          <Image source={require('../../icons/goUp24.png')} />
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+    <FlatList
+      style={globalStyles.mainContainer}
+      ListHeaderComponent={
+        <View style={globalStyles.headerContainer}>
+          <Text style={globalStyles.titleText}>My plants</Text>
+          <TouchableOpacity
+            style={globalStyles.roundButton}
+            onPress={() => navigation.navigate('AddPlant')}>
+            <Image source={require('../../icons/add24.png')} />
+          </TouchableOpacity>
+        </View>
+      }
+      data={myPlantsList}
+      renderItem={renderMyPlantCard}
+      keyExtractor={plant => plant._id}
+      ListFooterComponent={
+        <View style={globalStyles.bottomContainer}>
+          <TouchableOpacity style={globalStyles.roundButton}>
+            <Image source={require('../../icons/goUp24.png')} />
+          </TouchableOpacity>
+        </View>
+      }
+    />
   );
 };
 
