@@ -6,30 +6,62 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Pressable,
 } from 'react-native';
 import {connect} from 'react-redux';
 import {addPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
 import {useNavigation} from '@react-navigation/native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import globalStyles from '../../styles/global.styles';
 import styles from './AddPlant.styles';
 
 const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
   const navigation = useNavigation();
-  let [name, setPlantNameInputValue] = useState('');
-  let [room, setRoomInputValue] = useState('');
-  let [nextWaterDate, setNextWaterDateInputValue] = useState('');
-  let [nextMistDate, setNextMistDateInputValue] = useState('');
-  let [nextTransplantDate, setNextTransplantDateInputValue] = useState('');
-  let newPlant = {
-    name,
-    room,
-    nextWaterDate,
-    nextMistDate,
-    nextTransplantDate,
-    card: false,
-  };
+
+  const [name, setPlantNameInputValue] = useState('');
+  const [room, setRoomInputValue] = useState('');
+
+  const [nextWaterDate, setNextWaterDateInputValue] = useState(new Date());
+  const [showWaterDatePicker, setShowWaterDatePicker] = useState(false);
+
+  const [nextMistDate, setNextMistDateInputValue] = useState(new Date());
+  const [showMistDatePicker, setShowMistDatePicker] = useState(false);
+
+  const [nextTransplantDate, setNextTransplantDateInputValue] = useState(
+    new Date(),
+  );
+  const [showTransplantDatePicker, setShowTransplantDatePicker] =
+    useState(false);
+
   const onPressAddPlant = () => {
+    let newPlant = {
+      name,
+      room,
+      nextWaterDate: new Date(
+        Date.UTC(
+          nextWaterDate.getFullYear(),
+          nextWaterDate.getMonth(),
+          nextWaterDate.getDate(),
+        ),
+      ),
+      nextMistDate: new Date(
+        Date.UTC(
+          nextMistDate.getFullYear(),
+          nextMistDate.getMonth(),
+          nextMistDate.getDate(),
+        ),
+      ),
+      nextTransplantDate: new Date(
+        Date.UTC(
+          nextTransplantDate.getFullYear(),
+          nextTransplantDate.getMonth(),
+          nextTransplantDate.getDate(),
+        ),
+      ),
+      card: false,
+    };
+
     dispatch(addPlant(newPlant));
   };
   const userPlantsIds = userAccess.user.plants;
@@ -81,33 +113,81 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/water24.png')} />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setNextWaterDateInputValue(text)}
-              value={nextWaterDate}
-              placeholder="Last watering date"
-              keyboardType="default"
-            />
+            <Pressable onPress={() => setShowWaterDatePicker(true)}>
+              <TextInput
+                style={styles.input}
+                value={nextWaterDate.toLocaleDateString()}
+                editable={false}
+              />
+            </Pressable>
+            <>
+              {showWaterDatePicker && (
+                <DateTimePicker
+                  testID="dateTimePicker"
+                  value={nextWaterDate}
+                  mode="date"
+                  is24Hour={true}
+                  display="default"
+                  onChange={(e, selectedDate) => {
+                    setShowWaterDatePicker(false);
+                    const currentDate = selectedDate || nextWaterDate;
+                    setNextWaterDateInputValue(currentDate);
+                  }}
+                />
+              )}
+            </>
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/mist24.png')} />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setNextMistDateInputValue(text)}
-              value={nextMistDate}
-              placeholder="Last misting date"
-              keyboardType="default"
-            />
+            <Pressable onPress={() => setShowMistDatePicker(true)}>
+              <TextInput
+                style={styles.input}
+                value={nextMistDate.toLocaleDateString()}
+                editable={false}
+              />
+            </Pressable>
+            <>
+              {showMistDatePicker && (
+                <DateTimePicker
+                  testID="dateTimePicker"
+                  value={nextMistDate}
+                  mode="date"
+                  is24Hour={true}
+                  display="default"
+                  onChange={(e, selectedDate) => {
+                    setShowMistDatePicker(false);
+                    const currentDate = selectedDate || nextMistDate;
+                    setNextMistDateInputValue(currentDate);
+                  }}
+                />
+              )}
+            </>
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/settings24.png')} />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setNextTransplantDateInputValue(text)}
-              value={nextTransplantDate}
-              placeholder="Last transplant date"
-              keyboardType="default"
-            />
+            <Pressable onPress={() => setShowTransplantDatePicker(true)}>
+              <TextInput
+                style={styles.input}
+                value={nextTransplantDate.toLocaleDateString()}
+                editable={false}
+              />
+            </Pressable>
+            <>
+              {showTransplantDatePicker && (
+                <DateTimePicker
+                  testID="dateTimePicker"
+                  value={nextTransplantDate}
+                  mode="date"
+                  is24Hour={true}
+                  display="default"
+                  onChange={(e, selectedDate) => {
+                    setShowTransplantDatePicker(false);
+                    const currentDate = selectedDate || nextTransplantDate;
+                    setNextTransplantDateInputValue(currentDate);
+                  }}
+                />
+              )}
+            </>
           </View>
         </View>
         <TouchableOpacity

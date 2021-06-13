@@ -24,6 +24,15 @@ const MyPlantDetails = ({
     dispatch(deletePlant(plantId));
     navigation.navigate('MyPlants', {myPlantsIds: myPlantsIds});
   };
+  const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString(
+    'en-GB',
+  );
+  const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString(
+    'en-GB',
+  );
+  const transplantDate = new Date(
+    selectedPlant.nextTransplantDate,
+  ).toLocaleDateString('en-GB');
 
   useEffect(() => {
     dispatch(loadPlant(plantId));
@@ -48,17 +57,15 @@ const MyPlantDetails = ({
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/water24.png')} />
-            <Text style={globalStyles.text}>{selectedPlant.nextWaterDate}</Text>
+            <Text style={globalStyles.text}>{waterDate}</Text>
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/mist24.png')} />
-            <Text style={globalStyles.text}>{selectedPlant.nextMistDate}</Text>
+            <Text style={globalStyles.text}>{mistDate}</Text>
           </View>
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/settings24.png')} />
-            <Text style={globalStyles.text}>
-              {selectedPlant.nextTransplantDate}
-            </Text>
+            <Text style={globalStyles.text}>{transplantDate}</Text>
           </View>
         </View>
       </View>
