@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import {Image} from 'react-native';
 import {Provider} from 'react-redux';
 import configureStore from './src/redux/store/index';
 import {NavigationContainer} from '@react-navigation/native';
@@ -39,7 +40,10 @@ const App = () => {
               : undefined,
           })}
           tabBarOptions={{
-            showLabel: true,
+            showLabel: false,
+            style: {
+              backgroundColor: '#B8E0D2',
+            },
           }}>
           <Tab.Screen
             name="SignIn"
@@ -51,9 +55,33 @@ const App = () => {
             component={SignUp}
             options={{tabBarVisible: false}}
           />
-          <Tab.Screen name="MyReminders" component={MyReminders} />
-          <Tab.Screen name="PlantsSearcher" component={PlantsSearcher} />
-          <Tab.Screen name="MyPlants" component={MyPlants} />
+          <Tab.Screen
+            name="MyReminders"
+            component={MyReminders}
+            options={{
+              tabBarIcon: () => (
+                <Image source={require('./src/icons/calendar24.png')} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="PlantsSearcher"
+            component={PlantsSearcher}
+            options={{
+              tabBarIcon: () => (
+                <Image source={require('./src/icons/search24.png')} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="MyPlants"
+            component={MyPlants}
+            options={{
+              tabBarIcon: () => (
+                <Image source={require('./src/icons/flower24.png')} />
+              ),
+            }}
+          />
           <Tab.Screen
             name="PlantDetails"
             component={PlantDetails}
