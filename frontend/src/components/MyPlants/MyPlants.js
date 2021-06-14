@@ -1,13 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
-import {loadPlants} from '../../redux/actions/plantsActionCreators';
 import MyPlantCard from '../MyPlantCard/MyPlantCard';
 import globalStyles from '../../styles/global.styles';
 
-const MyPlants = ({plants, userAccess, dispatch}) => {
+const MyPlants = ({plants, userAccess}) => {
   const navigation = useNavigation();
   const myPlantsIds = [...userAccess.user.plants];
   const myPlantsList = [];
@@ -18,12 +16,6 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
     });
   }
   const renderMyPlantCard = ({item}) => <MyPlantCard plant={item} />;
-
-  useEffect(() => {
-    if (userAccess.user.plants.length) {
-      dispatch(loadPlants(userAccess.user.plants));
-    }
-  }, [userAccess.user.plants]);
 
   return (
     <FlatList

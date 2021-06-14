@@ -15,11 +15,6 @@ const styles = StyleSheet.create({
     width: 300,
     alignItems: 'flex-start',
   },
-  iconsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 10,
-  },
 });
 
 export default styles;
