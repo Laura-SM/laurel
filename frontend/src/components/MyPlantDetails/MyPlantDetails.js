@@ -17,18 +17,21 @@ const MyPlantDetails = ({
 }) => {
   const {plantId} = route.params;
   const navigation = useNavigation();
+
+  const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString();
+  const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString();
+  const transplantDate = new Date(
+    selectedPlant.nextTransplantDate,
+  ).toLocaleDateString();
+
   let myPlantsIds = userAccess.user.plants;
+
   const onPressDeletePlant = () => {
     userAccess.user.plants = myPlantsIds.filter(id => id !== plantId);
     dispatch(updateUser(userAccess.user));
     dispatch(deletePlant(plantId));
     navigation.navigate('MyPlants', {myPlantsIds: myPlantsIds});
   };
-  const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString();
-  const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString();
-  const transplantDate = new Date(
-    selectedPlant.nextTransplantDate,
-  ).toLocaleDateString();
 
   useEffect(() => {
     dispatch(loadPlant(plantId));
