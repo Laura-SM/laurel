@@ -21,7 +21,7 @@ const MyPlants = ({plants, userAccess, dispatch}) => {
 
   useEffect(() => {
     if (userAccess.user.plants.length) {
-      dispatch(loadPlants(userAccess.user.plants));
+      dispatch(loadPlants());
     }
   }, [userAccess.user.plants]);
 
