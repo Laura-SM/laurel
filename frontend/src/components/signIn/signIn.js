@@ -19,13 +19,8 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
   const onPressSignIn = () => {
     dispatch(signInUser({email, password}));
   };
-  if (userAccess.token) {
-    dispatch(loadPlants());
-  }
 
-  useEffect(() => {
-    userAccess.user && navigation.navigate('MyReminders');
-  }, [userAccess, navigation]);
+  userAccess.user && navigation.navigate('MyReminders');
 
   return (
     <View style={authStyles.mainContainer}>
