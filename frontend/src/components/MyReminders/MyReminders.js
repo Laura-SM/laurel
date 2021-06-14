@@ -7,16 +7,6 @@ import ReminderCard from '../ReminderCard/ReminderCard';
 import globalStyles from '../../styles/global.styles';
 
 const MyReminders = ({plants, userAccess, dispatch}) => {
-  // useEffect(() => {
-  //   dispatch(loadPlants());
-  // }, [plants.length]);
-
-  if (userAccess.token) {
-    if (!plants.length) {
-      dispatch(loadPlants());
-    }
-  }
-
   const currentDate = new Date();
   const currentDateNoTime = new Date(
     Date.UTC(
@@ -25,8 +15,9 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
       currentDate.getDate(),
     ),
   );
+  const renderReminderCard = ({item}) => <ReminderCard plant={item} />;
 
-  let plantsWithReminder = plants.filter(plant => {
+  const reminderPlants = plants.filter(plant => {
     return (
       userAccess.user.plants.includes(plant._id) &&
       (new Date(plant.nextWaterDate).getTime() <= currentDateNoTime.getTime() ||
@@ -36,7 +27,13 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
     );
   });
 
-  const renderReminderCard = ({item}) => <ReminderCard plant={item} />;
+  useEffect(() => {
+    if (plants.length) {
+      dispatch(loadPlants());
+    }
+  }, [plants]);
+
+  console.log(reminderPlants);
 
   return (
     <FlatList
@@ -49,7 +46,7 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
           <Text style={globalStyles.titleText}>My reminders</Text>
         </View>
       }
-      data={plantsWithReminder}
+      data={reminderPlants}
       renderItem={renderReminderCard}
       keyExtractor={plant => plant._id}
     />
