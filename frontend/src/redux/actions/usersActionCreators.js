@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://192.168.1.141:2021/users';
+const url = 'http://192.168.0.57:2021/users';
 
 export function updateUser(user) {
   return async dispatch => {
