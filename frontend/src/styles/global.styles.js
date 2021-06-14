@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
+  iconsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
   titleText: {
     fontSize: 24,
     fontWeight: 'bold',

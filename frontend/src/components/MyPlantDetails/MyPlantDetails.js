@@ -24,15 +24,11 @@ const MyPlantDetails = ({
     dispatch(deletePlant(plantId));
     navigation.navigate('MyPlants', {myPlantsIds: myPlantsIds});
   };
-  const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString(
-    'en-GB',
-  );
-  const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString(
-    'en-GB',
-  );
+  const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString();
+  const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString();
   const transplantDate = new Date(
     selectedPlant.nextTransplantDate,
-  ).toLocaleDateString('en-GB');
+  ).toLocaleDateString();
 
   useEffect(() => {
     dispatch(loadPlant(plantId));
@@ -51,19 +47,19 @@ const MyPlantDetails = ({
       <View style={styles.centralContainer}>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
         <View style={styles.featuresContainer}>
-          <View style={styles.iconsContainer}>
+          <View style={globalStyles.iconsContainer}>
             <Image source={require('../../icons/room24.png')} />
             <Text style={globalStyles.text}>{selectedPlant.room}</Text>
           </View>
-          <View style={styles.iconsContainer}>
+          <View style={globalStyles.iconsContainer}>
             <Image source={require('../../icons/water24.png')} />
             <Text style={globalStyles.text}>{waterDate}</Text>
           </View>
-          <View style={styles.iconsContainer}>
+          <View style={globalStyles.iconsContainer}>
             <Image source={require('../../icons/mist24.png')} />
             <Text style={globalStyles.text}>{mistDate}</Text>
           </View>
-          <View style={styles.iconsContainer}>
+          <View style={globalStyles.iconsContainer}>
             <Image source={require('../../icons/settings24.png')} />
             <Text style={globalStyles.text}>{transplantDate}</Text>
           </View>
