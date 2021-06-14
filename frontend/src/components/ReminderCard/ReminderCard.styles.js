@@ -3,11 +3,11 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   cardContainer: {
     width: 350,
-    height: 250,
+    height: 150,
     borderWidth: 2,
     borderColor: '#93B1A7',
     borderRadius: 10,
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     marginVertical: 10,
     marginLeft: 20,
@@ -21,7 +21,14 @@ const styles = StyleSheet.create({
   },
   featuresContainer: {
     alignItems: 'flex-start',
-    flexDirection: 'column',
+    width: 150,
+  },
+  iconsContainer: {
+    width: 170,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    marginVertical: 10,
   },
 });
 
