@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
+import ReminderCard from '../ReminderCard/ReminderCard';
 import globalStyles from '../../styles/global.styles';
 
 const MyReminders = ({plants, userAccess, dispatch}) => {
@@ -14,12 +15,7 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
       currentDate.getDate(),
     ),
   );
-
-  useEffect(() => {
-    if (userAccess.user.plants.length) {
-      dispatch(loadPlants());
-    }
-  }, [userAccess.user.plants]);
+  const renderReminderCard = ({item}) => <ReminderCard plant={item} />;
 
   const reminderPlants = plants.filter(plant => {
     return (
@@ -30,17 +26,30 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
           currentDateNoTime.getTime())
     );
   });
+
+  useEffect(() => {
+    if (plants.length) {
+      dispatch(loadPlants());
+    }
+  }, [plants]);
+
   console.log(reminderPlants);
 
   return (
-    <View>
-      <View style={globalStyles.headerContainer}>
-        <Text style={globalStyles.titleText}>My Reminders</Text>
-      </View>
-      <Text style={globalStyles.subTitleText}>Today</Text>
-      <Text>{currentDate.toLocaleDateString()}</Text>
-      <Text>Plantes</Text>
-    </View>
+    <FlatList
+      style={globalStyles.mainContainer}
+      ListEmptyComponent={
+        <Text style={globalStyles.text}>You don't have any reminder!</Text>
+      }
+      ListHeaderComponent={
+        <View style={globalStyles.headerContainer}>
+          <Text style={globalStyles.titleText}>My reminders</Text>
+        </View>
+      }
+      data={reminderPlants}
+      renderItem={renderReminderCard}
+      keyExtractor={plant => plant._id}
+    />
   );
 };
 
