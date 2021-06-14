@@ -65,20 +65,20 @@ const App = () => {
             }}
           />
           <Tab.Screen
-            name="PlantsSearcher"
-            component={PlantsSearcher}
-            options={{
-              tabBarIcon: () => (
-                <Image source={require('./src/icons/search24.png')} />
-              ),
-            }}
-          />
-          <Tab.Screen
             name="MyPlants"
             component={MyPlants}
             options={{
               tabBarIcon: () => (
                 <Image source={require('./src/icons/flower24.png')} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="PlantsSearcher"
+            component={PlantsSearcher}
+            options={{
+              tabBarIcon: () => (
+                <Image source={require('./src/icons/search24.png')} />
               ),
             }}
           />
