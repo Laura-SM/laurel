@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {deletePlant, loadPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
 import {useNavigation} from '@react-navigation/native';
-import styles from './MyPlantDetails.style';
-import globalStyles from '../../styles/global.styles';
+import styles from './styles';
+import globalStyles from '../../styles/globalStyles';
 
 const MyPlantDetails = ({
   userAccess,
