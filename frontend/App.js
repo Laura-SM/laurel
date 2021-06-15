@@ -15,6 +15,7 @@ import MyReminders from './src/components/MyReminders/MyReminders';
 import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
 import MyPlants from './src/components/MyPlants/MyPlants';
 import AddPlant from './src/components/AddPlant/AddPlant';
+import ReminderCard from './src/components/ReminderCard/ReminderCard';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +34,7 @@ const App = () => {
               'MyPlantDetails',
               'MyPlantCard',
               'AddPlant',
+              'ReminderCard',
             ].includes(route.name)
               ? () => {
                   return null;
@@ -97,6 +99,11 @@ const App = () => {
           <Tab.Screen
             name="AddPlant"
             component={AddPlant}
+            options={{tabBarVisible: false}}
+          />
+          <Tab.Screen
+            name="ReminderCard"
+            component={ReminderCard}
             options={{tabBarVisible: false}}
           />
         </Tab.Navigator>
