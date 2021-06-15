@@ -1,13 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
 function signUpReducer(user = {}, action) {
+  let updatedUser = user;
   switch (action.type) {
     case actionTypes.SIGNUP_USER:
-      return action.user;
-
+      updatedUser = action.user;
+      break;
     default:
-      return user;
+      updatedUser;
+      break;
   }
+  return updatedUser;
 }
 
 export default signUpReducer;
