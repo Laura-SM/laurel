@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 function usersReducer(users = [], action) {
-  let updatedUsers = [];
+  let updatedUsers = users;
   switch (action.type) {
     case actionTypes.UPDATE_USER:
       updatedUsers = users.map(user =>
@@ -9,7 +9,8 @@ function usersReducer(users = [], action) {
       );
       break;
     default:
-      return users;
+      updatedUsers;
+      break;
   }
   return updatedUsers;
 }
