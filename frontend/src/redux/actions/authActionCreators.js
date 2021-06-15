@@ -1,7 +1,8 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
+import {env} from '../../../.env.js';
 
-const url = 'http://192.168.0.57:2021';
+const url = env.REACT_APP_PORT;
 
 export function signInUser(user) {
   return async dispatch => {
