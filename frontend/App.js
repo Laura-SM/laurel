@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import configureStore from './src/redux/store/index';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import SignIn from './src/components/SignIn/SignIn';
+import SignIn from './src/components/SignIn/index';
 import SignUp from './src/components/SignUp/SignUp';
 import PlantDetails from './src/components/PlantDetails/PlantDetails';
 import PlantCard from './src/components/PlantCard/PlantCard';
