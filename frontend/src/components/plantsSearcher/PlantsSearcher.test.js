@@ -4,7 +4,7 @@ import {render} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-import CardPlant from '../CardPlant/CardPlant';
+import PlantCard from '../PlantCard/PlantCard';
 
 describe('Given a PlantsSearcher component', () => {
   const mockStore = configureStore([thunk]);
@@ -20,7 +20,7 @@ describe('Given a PlantsSearcher component', () => {
       const tree = render(
         <Provider store={store}>
           <PlantsSearcher>
-            <CardPlant />
+            <PlantCard />
           </PlantsSearcher>
         </Provider>,
       );
