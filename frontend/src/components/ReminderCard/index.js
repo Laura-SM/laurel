@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import globalStyles from '../../styles/global.styles';
-import styles from './ReminderCard.styles';
+import globalStyles from '../../styles/globalStyles';
+import styles from './styles';
 
 const ReminderCard = ({plant}) => {
   const currentDate = new Date();
