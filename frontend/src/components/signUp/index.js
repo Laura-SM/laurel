@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {signUpUser} from '../../redux/actions/authActionCreators';
-import globalStyles from '../../styles/global.styles';
-import authStyles from '../../styles/auth.styles';
+import globalStyles from '../../styles/globalStyles';
+import authStyles from '../../styles/authStyles';
 
 const SignUp = ({dispatch, user, navigation}) => {
   let [email, setEmailInputValue] = useState('');
