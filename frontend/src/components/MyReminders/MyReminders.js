@@ -7,6 +7,13 @@ import ReminderCard from '../ReminderCard/ReminderCard';
 import globalStyles from '../../styles/global.styles';
 
 const MyReminders = ({plants, userAccess, dispatch}) => {
+  useEffect(() => {
+    if (!plants.length) {
+      console.log('dispatx');
+      dispatch(loadPlants());
+    }
+  }, []);
+
   const currentDate = new Date();
   const currentDateNoTime = new Date(
     Date.UTC(
@@ -26,14 +33,6 @@ const MyReminders = ({plants, userAccess, dispatch}) => {
           currentDateNoTime.getTime())
     );
   });
-
-  useEffect(() => {
-    if (plants.length) {
-      dispatch(loadPlants());
-    }
-  }, [plants]);
-
-  console.log(reminderPlants);
 
   return (
     <FlatList
