@@ -9,9 +9,8 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {signInUser} from '../../redux/actions/authActionCreators';
-import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import globalStyles from '../../styles/global.styles';
-import authStyles from '../../styles/auth.styles';
+import globalStyles from '../../styles/globalStyles';
+import authStyles from '../../styles/authStyles';
 
 const SignIn = ({dispatch, userAccess, navigation}) => {
   let [email, setEmailInputValue] = useState('');
@@ -19,9 +18,6 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
   const onPressSignIn = () => {
     dispatch(signInUser({email, password}));
   };
-  if (userAccess.token) {
-    dispatch(loadPlants());
-  }
 
   useEffect(() => {
     userAccess.user && navigation.navigate('MyReminders');
