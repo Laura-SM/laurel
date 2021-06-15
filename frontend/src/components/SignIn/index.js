@@ -15,12 +15,13 @@ import authStyles from '../../styles/authStyles';
 const SignIn = ({dispatch, userAccess, navigation}) => {
   let [email, setEmailInputValue] = useState('');
   let [password, setPasswordInputValue] = useState('');
+
   const onPressSignIn = () => {
     dispatch(signInUser({email, password}));
   };
 
   useEffect(() => {
-    userAccess.user && navigation.navigate('MyReminders');
+    userAccess.token && navigation.navigate('MyReminders');
   }, [userAccess, navigation]);
 
   return (
@@ -32,6 +33,7 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
         }}
       />
       <TextInput
+        testID="emailInput"
         style={authStyles.input}
         onChangeText={text => setEmailInputValue(text)}
         value={email}
@@ -40,6 +42,7 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
         textContentType="emailAddress"
       />
       <TextInput
+        testID="passwordInput"
         style={authStyles.input}
         onChangeText={text => setPasswordInputValue(text)}
         value={password}
@@ -49,12 +52,15 @@ const SignIn = ({dispatch, userAccess, navigation}) => {
         secureTextEntry={true}
       />
       <TouchableOpacity
+        testID="signIn"
         style={globalStyles.submitButton}
         onPress={onPressSignIn}>
         <Text style={authStyles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <View style={authStyles.bottomContainer}>
-        <Pressable onPress={() => navigation.navigate('SignUp')}>
+        <Pressable
+          testID="goSignUp"
+          onPress={() => navigation.navigate('SignUp')}>
           <Text style={globalStyles.text}>
             Don't have an account?{' '}
             <Text style={authStyles.underlineText}>Create new</Text>
