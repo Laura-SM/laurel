@@ -1,16 +1,19 @@
 import actionTypes from '../actions/actionTypes';
 
 function selectedPlantReducer(selectedPlant = {}, action) {
+  let updateSelectedPlant = selectedPlant;
   switch (action.type) {
     case actionTypes.LOAD_PLANT:
-      return action.selectedPlant;
+      updateSelectedPlant = action.selectedPlant;
+      break;
     case actionTypes.ADD_PLANT:
-      selectedPlant = action.plant;
-      return selectedPlant;
-
+      updateSelectedPlant = action.plant;
+      break;
     default:
-      return selectedPlant;
+      updateSelectedPlant;
+      break;
   }
+  return updateSelectedPlant;
 }
 
 export default selectedPlantReducer;
