@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 function selectedPlantReducer(selectedPlant = {}, action) {
-  let updateSelectedPlant = selectedPlant;
+  let updateSelectedPlant = {};
   switch (action.type) {
     case actionTypes.LOAD_PLANT:
       updateSelectedPlant = action.selectedPlant;
@@ -10,7 +10,7 @@ function selectedPlantReducer(selectedPlant = {}, action) {
       updateSelectedPlant = action.plant;
       break;
     default:
-      updateSelectedPlant;
+      updateSelectedPlant = selectedPlant;
       break;
   }
   return updateSelectedPlant;
