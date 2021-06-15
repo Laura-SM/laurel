@@ -15,6 +15,7 @@ import authStyles from '../../styles/authStyles';
 const SignUp = ({dispatch, user, navigation}) => {
   let [email, setEmailInputValue] = useState('');
   let [password, setPasswordInputValue] = useState('');
+
   const onPressSignUp = () => {
     dispatch(signUpUser({email, password}));
   };
@@ -32,6 +33,7 @@ const SignUp = ({dispatch, user, navigation}) => {
         }}
       />
       <TextInput
+        testID="emailInput"
         style={authStyles.input}
         onChangeText={text => setEmailInputValue(text)}
         value={email}
@@ -40,6 +42,7 @@ const SignUp = ({dispatch, user, navigation}) => {
         textContentType="emailAddress"
       />
       <TextInput
+        testID="passwordInput"
         style={authStyles.input}
         onChangeText={text => setPasswordInputValue(text)}
         value={password}
@@ -49,12 +52,15 @@ const SignUp = ({dispatch, user, navigation}) => {
         secureTextEntry={true}
       />
       <TouchableOpacity
+        testID="signUp"
         style={globalStyles.submitButton}
         onPress={onPressSignUp}>
         <Text style={authStyles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
       <View style={authStyles.bottomContainer}>
-        <Pressable onPress={() => navigation.navigate('SignIn')}>
+        <Pressable
+          testID="goSignIn"
+          onPress={() => navigation.navigate('SignIn')}>
           <Text style={globalStyles.text}>
             Already a member?{' '}
             <Text style={authStyles.underlineText}>Sign In</Text>
