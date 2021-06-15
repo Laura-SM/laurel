@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 function plantsReducer(plants = [], action) {
-  let updatedPlants = [];
+  let updatedPlants = plants;
   switch (action.type) {
     case actionTypes.LOAD_PLANTS:
       updatedPlants = action.plants;
@@ -18,7 +18,8 @@ function plantsReducer(plants = [], action) {
       );
       break;
     default:
-      return plants;
+      updatedPlants;
+      break;
   }
   return updatedPlants;
 }
