@@ -2,8 +2,8 @@ import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
-import MyPlantCard from '../MyPlantCard/MyPlantCard';
-import globalStyles from '../../styles/global.styles';
+import MyPlantCard from '../MyPlantCard';
+import globalStyles from '../../styles/globalStyles';
 
 const MyPlants = ({plants, userAccess}) => {
   const navigation = useNavigation();

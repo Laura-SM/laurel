@@ -3,8 +3,8 @@ import React, {useEffect} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlant} from '../../redux/actions/plantsActionCreators';
-import styles from './PlantDetails.styles';
-import globalStyles from '../../styles/global.styles';
+import styles from './styles';
+import globalStyles from '../../styles/globalStyles';
 
 function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
   const {plantId} = route.params;

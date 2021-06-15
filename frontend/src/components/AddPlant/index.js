@@ -13,8 +13,8 @@ import {addPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
 import {useNavigation} from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import globalStyles from '../../styles/global.styles';
-import styles from './AddPlant.styles';
+import globalStyles from '../../styles/globalStyles';
+import styles from './styles';
 
 const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
   const navigation = useNavigation();

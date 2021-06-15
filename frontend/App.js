@@ -6,16 +6,16 @@ import configureStore from './src/redux/store/index';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SignIn from './src/components/SignIn/index';
-import SignUp from './src/components/SignUp/SignUp';
-import PlantDetails from './src/components/PlantDetails/PlantDetails';
-import PlantCard from './src/components/PlantCard/PlantCard';
-import MyPlantDetails from './src/components/MyPlantDetails/MyPlantDetails';
-import MyPlantCard from './src/components/MyPlantCard/MyPlantCard';
-import MyReminders from './src/components/MyReminders/MyReminders';
-import PlantsSearcher from './src/components/PlantsSearcher/PlantsSearcher';
-import MyPlants from './src/components/MyPlants/MyPlants';
-import AddPlant from './src/components/AddPlant/AddPlant';
-import ReminderCard from './src/components/ReminderCard/ReminderCard';
+import SignUp from './src/components/SignUp';
+import PlantDetails from './src/components/PlantDetails';
+import PlantCard from './src/components/PlantCard';
+import MyPlantDetails from './src/components/MyPlantDetails';
+import MyPlantCard from './src/components/MyPlantCard';
+import MyReminders from './src/components/MyReminders';
+import PlantsSearcher from './src/components/PlantsSearcher';
+import MyPlants from './src/components/MyPlants';
+import AddPlant from './src/components/AddPlant';
+import ReminderCard from './src/components/ReminderCard';
 
 const Tab = createBottomTabNavigator();
 

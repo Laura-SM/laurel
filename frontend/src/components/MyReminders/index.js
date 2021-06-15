@@ -3,8 +3,8 @@ import React, {useEffect} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import {loadPlants} from '../../redux/actions/plantsActionCreators';
-import ReminderCard from '../ReminderCard/ReminderCard';
-import globalStyles from '../../styles/global.styles';
+import ReminderCard from '../ReminderCard';
+import globalStyles from '../../styles/globalStyles';
 
 const MyReminders = ({plants, userAccess, dispatch}) => {
   useEffect(() => {

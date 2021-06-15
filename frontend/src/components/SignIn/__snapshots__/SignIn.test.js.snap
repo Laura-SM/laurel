@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a SignIn component When invoques SignIn function Then SignIn component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#D6EADF",
+      "flex": 1,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://i.ibb.co/pbFgzLP/laurel-logo.png",
+      }
+    }
+    style={
+      Object {
+        "height": 290,
+        "marginTop": 60,
+        "width": 320,
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="default"
+    onChangeText={[Function]}
+    placeholder="email"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "fontSize": 20,
+        "height": 50,
+        "justifyContent": "center",
+        "margin": 5,
+        "paddingHorizontal": 10,
+        "width": 350,
+      }
+    }
+    testID="emailInput"
+    textContentType="emailAddress"
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="default"
+    onChangeText={[Function]}
+    placeholder="password"
+    rejectResponderTermination={true}
+    secureTextEntry={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "fontSize": 20,
+        "height": 50,
+        "justifyContent": "center",
+        "margin": 5,
+        "paddingHorizontal": 10,
+        "width": 350,
+      }
+    }
+    testID="passwordInput"
+    textContentType="password"
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#B8E0D2",
+        "borderRadius": 10,
+        "height": 65,
+        "justifyContent": "center",
+        "margin": 20,
+        "opacity": 1,
+        "width": 150,
+      }
+    }
+    testID="signIn"
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+        }
+      }
+    >
+      Sign In
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "margin": 20,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      testID="goSignUp"
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+            "marginHorizontal": 20,
+          }
+        }
+      >
+        Don't have an account?
+         
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "textDecorationLine": "underline",
+            }
+          }
+        >
+          Create new
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
-import PlantCard from '../PlantCard/PlantCard';
-import globalStyles from '../../styles/global.styles';
+import PlantCard from '../PlantCard';
+import globalStyles from '../../styles/globalStyles';
 
 const PlantsSearcher = ({plants}) => {
   const plantsList = plants.filter(plant => plant.card === true);
