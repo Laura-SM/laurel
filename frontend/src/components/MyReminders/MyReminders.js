@@ -9,7 +9,6 @@ import globalStyles from '../../styles/global.styles';
 const MyReminders = ({plants, userAccess, dispatch}) => {
   useEffect(() => {
     if (!plants.length) {
-      console.log('dispatx');
       dispatch(loadPlants());
     }
   }, []);
