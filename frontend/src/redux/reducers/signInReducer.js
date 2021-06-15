@@ -1,14 +1,11 @@
 import actionTypes from '../actions/actionTypes';
 
 function signInReducer(userTokens = {}, action) {
-  let updatedUserTokens = userTokens;
-  switch (action.type) {
-    case actionTypes.SIGNIN_USER:
-      updatedUserTokens = action.userTokens;
-      break;
-    default:
-      updatedUserTokens;
-      break;
+  let updatedUserTokens = {};
+  if (action.type === actionTypes.SIGNIN_USER) {
+    updatedUserTokens = action.userTokens;
+  } else {
+    updatedUserTokens = userTokens;
   }
   return updatedUserTokens;
 }
