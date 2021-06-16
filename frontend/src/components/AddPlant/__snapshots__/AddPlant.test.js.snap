@@ -1,0 +1,387 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a AddPlant component When is AddPlant function is invoked Then AddPlant is rendered correctly 1`] = `
+<RCTScrollView
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 80,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+            "fontWeight": "bold",
+            "margin": 20,
+          }
+        }
+      >
+        Add plant
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+            "left": 95,
+            "position": "absolute",
+            "top": 125,
+            "zIndex": 1,
+          }
+        }
+      >
+        Add a photo of your plant
+      </Text>
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/icons/flower48.png",
+          }
+        }
+        style={
+          Object {
+            "backgroundColor": "#E5E5E5",
+            "borderRadius": 10,
+            "height": 230,
+            "margin": 20,
+            "width": 230,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "width": 320,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginVertical": 10,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/description24.png",
+              }
+            }
+          />
+          <TextInput
+            allowFontScaling={true}
+            keyboardType="default"
+            onChangeText={[Function]}
+            placeholder="Plant name"
+            rejectResponderTermination={true}
+            style={
+              Object {
+                "backgroundColor": "#E5E5E5",
+                "borderRadius": 10,
+                "fontSize": 20,
+                "height": 45,
+                "marginHorizontal": 10,
+                "paddingHorizontal": 20,
+                "textAlignVertical": "center",
+                "width": 250,
+              }
+            }
+            underlineColorAndroid="transparent"
+            value=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginVertical": 10,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/room24.png",
+              }
+            }
+          />
+          <TextInput
+            allowFontScaling={true}
+            keyboardType="default"
+            onChangeText={[Function]}
+            placeholder="Room"
+            rejectResponderTermination={true}
+            style={
+              Object {
+                "backgroundColor": "#E5E5E5",
+                "borderRadius": 10,
+                "fontSize": 20,
+                "height": 45,
+                "marginHorizontal": 10,
+                "paddingHorizontal": 20,
+                "textAlignVertical": "center",
+                "width": 250,
+              }
+            }
+            underlineColorAndroid="transparent"
+            value=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginVertical": 10,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/water24.png",
+              }
+            }
+          />
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              rejectResponderTermination={true}
+              style={
+                Object {
+                  "backgroundColor": "#E5E5E5",
+                  "borderRadius": 10,
+                  "fontSize": 20,
+                  "height": 45,
+                  "marginHorizontal": 10,
+                  "paddingHorizontal": 20,
+                  "textAlignVertical": "center",
+                  "width": 250,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="16/06/2021"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginVertical": 10,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/mist24.png",
+              }
+            }
+          />
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              rejectResponderTermination={true}
+              style={
+                Object {
+                  "backgroundColor": "#E5E5E5",
+                  "borderRadius": 10,
+                  "fontSize": 20,
+                  "height": 45,
+                  "marginHorizontal": 10,
+                  "paddingHorizontal": 20,
+                  "textAlignVertical": "center",
+                  "width": 250,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="16/06/2021"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginVertical": 10,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/settings24.png",
+              }
+            }
+          />
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              rejectResponderTermination={true}
+              style={
+                Object {
+                  "backgroundColor": "#E5E5E5",
+                  "borderRadius": 10,
+                  "fontSize": 20,
+                  "height": 45,
+                  "marginHorizontal": 10,
+                  "paddingHorizontal": 20,
+                  "textAlignVertical": "center",
+                  "width": 250,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="16/06/2021"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#B8E0D2",
+            "borderRadius": 10,
+            "height": 65,
+            "justifyContent": "center",
+            "margin": 20,
+            "opacity": 1,
+            "width": 150,
+          }
+        }
+        testID="addPlantButton"
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/done24.png",
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#B8E0D2",
+            "borderRadius": 50,
+            "height": 60,
+            "justifyContent": "center",
+            "margin": 20,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+        testID="goBackButton"
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/goBack24.png",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
