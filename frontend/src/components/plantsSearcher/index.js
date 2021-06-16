@@ -4,9 +4,11 @@ import {connect} from 'react-redux';
 import PlantCard from '../PlantCard';
 import globalStyles from '../../styles/globalStyles';
 
-const PlantsSearcher = ({plants}) => {
+const PlantsSearcher = ({plants, navigation}) => {
   const plantsList = plants.filter(plant => plant.card === true);
-  const renderPlantCard = ({item}) => <PlantCard plant={item} />;
+  const renderPlantCard = ({item}) => (
+    <PlantCard plant={item} navigation={navigation} />
+  );
 
   return (
     <FlatList
