@@ -6,6 +6,7 @@ import globalStyles from '../../styles/globalStyles';
 const MyPlantCard = ({plant, navigation}) => {
   return (
     <Pressable
+      testID="goToDetails"
       style={styles.cardContainer}
       onPress={() =>
         navigation.navigate('MyPlantDetails', {plantId: plant._id})

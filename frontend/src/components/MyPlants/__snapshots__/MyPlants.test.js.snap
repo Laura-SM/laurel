@@ -191,6 +191,7 @@ exports[`Given a MyPlants component When is invoked Then it is renders correctly
               "width": 165,
             }
           }
+          testID="goToDetails"
         >
           <Image
             source={
