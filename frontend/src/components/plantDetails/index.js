@@ -6,7 +6,7 @@ import {loadPlant} from '../../redux/actions/plantsActionCreators';
 import styles from './styles';
 import globalStyles from '../../styles/globalStyles';
 
-function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
+function PlantDetails({selectedPlant, dispatch, route, navigation}) {
   const {plantId} = route.params;
 
   useEffect(() => {
@@ -90,8 +90,9 @@ function PlantDetails({selectedPlant, dispatch, route, navigation: {goBack}}) {
       <Text style={globalStyles.text}>{selectedPlant.info}</Text>
       <View style={globalStyles.bottomContainer}>
         <TouchableOpacity
+          testID="goBackButton"
           style={globalStyles.roundButton}
-          onPress={() => goBack()}>
+          onPress={() => navigation.goBack()}>
           <Image source={require('../../icons/goBack24.png')} />
         </TouchableOpacity>
       </View>
