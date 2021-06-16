@@ -1,6 +1,6 @@
 import React from 'react';
 import MyPlants from './index';
-import {render} from '@testing-library/react-native';
+import {render, fireEvent} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
@@ -33,6 +33,22 @@ describe('Given a MyPlants component', () => {
         </Provider>,
       );
       expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('When addPlant button is pressed', () => {
+    test('Then navigation.navigate is invoked', () => {
+      const {getByTestId} = render(
+        <Provider store={store}>
+          <MyPlants navigation={navigation}>
+            <MyPlantCard />
+          </MyPlants>
+        </Provider>,
+      );
+      const addPlant = getByTestId('goAddPlant');
+      fireEvent.press(addPlant);
+
+      expect(navigation.navigate).toHaveBeenCalled();
     });
   });
 });

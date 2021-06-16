@@ -27,6 +27,7 @@ const MyPlants = ({plants, userAccess, navigation}) => {
         <View style={globalStyles.headerContainer}>
           <Text style={globalStyles.titleText}>My plants</Text>
           <TouchableOpacity
+            testID="goAddPlant"
             style={globalStyles.roundButton}
             onPress={() => navigation.navigate('AddPlant')}>
             <Image source={require('../../icons/add24.png')} />

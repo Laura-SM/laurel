@@ -49,6 +49,7 @@ exports[`Given a MyPlants component When is invoked Then it is renders correctly
             "width": 60,
           }
         }
+        testID="goAddPlant"
       >
         <Image
           source={
@@ -143,6 +144,7 @@ exports[`Given a MyPlants component When is invoked Then it is renders correctly
               "width": 60,
             }
           }
+          testID="goAddPlant"
         >
           <Image
             source={
