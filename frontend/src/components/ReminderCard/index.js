@@ -23,19 +23,28 @@ const ReminderCard = ({plant}) => {
     <View style={styles.cardContainer}>
       <Image style={styles.image} source={{uri: plant.image}} />
       <View style={styles.featuresContainer}>
-        <View style={styles.iconsContainer}>
-          <Text style={globalStyles.boldText}>{plant.name}</Text>
-          <Text style={globalStyles.text}>{plant.room}</Text>
+        <View style={styles.namesContainer}>
+          <Text style={styles.boldText}>{plant.name}</Text>
+          <Text style={styles.text}>{plant.room}</Text>
         </View>
         <View style={styles.iconsContainer}>
           {waterDate <= currentDateNoTime.toLocaleDateString() && (
-            <Image source={require('../../icons/water24.png')} />
+            <Image
+              style={styles.iconContainer}
+              source={require('../../icons/water24.png')}
+            />
           )}
           {mistDate <= currentDateNoTime.toLocaleDateString() && (
-            <Image source={require('../../icons/mist24.png')} />
+            <Image
+              style={styles.iconContainer}
+              source={require('../../icons/mist24.png')}
+            />
           )}
           {transplantDate <= currentDateNoTime.toLocaleDateString() && (
-            <Image source={require('../../icons/settings24.png')} />
+            <Image
+              style={styles.iconContainer}
+              source={require('../../icons/settings24.png')}
+            />
           )}
         </View>
       </View>

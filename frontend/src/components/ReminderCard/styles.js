@@ -14,21 +14,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     borderRadius: 10,
     backgroundColor: '#E5E5E5',
   },
   featuresContainer: {
     alignItems: 'flex-start',
+    width: 180,
+  },
+  namesContainer: {
     width: 150,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginVertical: 10,
   },
   iconsContainer: {
-    width: 170,
+    width: 180,
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     marginVertical: 10,
+  },
+  iconContainer: {
+    margin: 10,
+  },
+  boldText: {
+    fontSize: 18,
+    marginHorizontal: 5,
+    fontWeight: 'bold',
+  },
+  text: {
+    fontSize: 18,
+    marginHorizontal: 5,
   },
 });
 
