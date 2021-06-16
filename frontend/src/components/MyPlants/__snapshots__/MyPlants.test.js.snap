@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a MyPlants component When is invoked Then it is renders correctly 1`] = `
+<RCTScrollView
+  ListEmptyComponent={
+    <Text
+      style={
+        Object {
+          "fontSize": 18,
+          "marginHorizontal": 20,
+        }
+      }
+    >
+      Add your plants!
+    </Text>
+  }
+  ListHeaderComponent={
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 80,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+            "fontWeight": "bold",
+            "margin": 20,
+          }
+        }
+      >
+        My plants
+      </Text>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#B8E0D2",
+            "borderRadius": 50,
+            "height": 60,
+            "justifyContent": "center",
+            "margin": 20,
+            "width": 60,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/add24.png",
+            }
+          }
+        />
+      </ForwardRef>
+    </View>
+  }
+  data={
+    Array [
+      Object {
+        "_id": "1a",
+        "name": "kentia",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 80,
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "margin": 20,
+            }
+          }
+        >
+          My plants
+        </Text>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#B8E0D2",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": 20,
+              "opacity": 1,
+              "width": 60,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/icons/add24.png",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#93B1A7",
+              "borderRadius": 10,
+              "borderWidth": 2,
+              "height": 165,
+              "justifyContent": "center",
+              "marginLeft": 20,
+              "marginVertical": 10,
+              "width": 165,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "backgroundColor": "#E5E5E5",
+                "borderRadius": 10,
+                "height": 100,
+                "width": 100,
+              }
+            }
+          />
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginHorizontal": 20,
+              }
+            }
+          >
+            kentia
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "marginHorizontal": 20,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
