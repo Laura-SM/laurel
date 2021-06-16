@@ -1,5 +1,4 @@
 import React from 'react';
-import {FlatList} from 'react-native';
 import PlantsSearcher from './index';
 import {render} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
