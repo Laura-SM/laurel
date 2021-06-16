@@ -1,4 +1,4 @@
-<h1 align="center">LAUREL, A FULLSTACK PLANTS NEEDS REMINDER APP  </h1>
+<h1 align="center">LAUREL, HELPS YOU TO TAKE CARE OF YOUR PLANTS</h1>
 
 <p>This is my final project of Skylab bootcamp. I created a fullstack app with React Native that allows a user to add their plants and control the date of the next water, mist or transplant needs. Also, it offers a list of plants with their main features to give inspiration before acquiring a new plant or to know better their requirements.</p>
 
