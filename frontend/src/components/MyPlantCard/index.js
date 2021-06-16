@@ -13,7 +13,7 @@ const MyPlantCard = ({plant, navigation}) => {
       }>
       <Image style={styles.image} source={{uri: plant.image}} />
       <Text style={globalStyles.boldText}>{plant.name}</Text>
-      <Text style={globalStyles.text}>{plant.room}</Text>
+      <Text style={styles.text}>{plant.room}</Text>
     </Pressable>
   );
 };
