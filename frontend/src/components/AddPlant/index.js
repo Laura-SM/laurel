@@ -91,6 +91,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant, navigation}) => {
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/description24.png')} />
             <TextInput
+              testID="plantNameInput"
               style={styles.input}
               onChangeText={text => setPlantNameInputValue(text)}
               value={name}
@@ -101,6 +102,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant, navigation}) => {
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/room24.png')} />
             <TextInput
+              testID="plantRoomInput"
               style={styles.input}
               onChangeText={text => setRoomInputValue(text)}
               value={room}

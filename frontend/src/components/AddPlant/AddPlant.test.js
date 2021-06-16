@@ -106,4 +106,34 @@ describe('Given a AddPlant component', () => {
       expect(navigation.navigate).toHaveBeenCalled();
     });
   });
+
+  describe('When plantName input is pressed', () => {
+    test('Then plantNameInput value is kentia', () => {
+      const {getByTestId} = render(
+        <Provider store={store}>
+          <AddPlant navigation={navigation} />
+        </Provider>,
+      );
+      const plantNameInput = getByTestId('plantNameInput');
+      const plantName = 'kentia';
+      fireEvent.changeText(plantNameInput, plantName);
+
+      expect(plantNameInput.props.value).toBe(plantName);
+    });
+  });
+
+  describe('When plantRoom input is pressed', () => {
+    test('Then plantRoomInput value is bedroom', () => {
+      const {getByTestId} = render(
+        <Provider store={store}>
+          <AddPlant navigation={navigation} />
+        </Provider>,
+      );
+      const plantRoomInput = getByTestId('plantRoomInput');
+      const plantRoom = 'bedroom';
+      fireEvent.changeText(plantRoomInput, plantRoom);
+
+      expect(plantRoomInput.props.value).toBe(plantRoom);
+    });
+  });
 });

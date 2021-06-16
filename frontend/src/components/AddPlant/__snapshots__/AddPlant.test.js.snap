@@ -110,6 +110,7 @@ exports[`Given a AddPlant component When is AddPlant function is invoked Then Ad
                 "width": 250,
               }
             }
+            testID="plantNameInput"
             underlineColorAndroid="transparent"
             value=""
           />
@@ -148,6 +149,7 @@ exports[`Given a AddPlant component When is AddPlant function is invoked Then Ad
                 "width": 250,
               }
             }
+            testID="plantRoomInput"
             underlineColorAndroid="transparent"
             value=""
           />
