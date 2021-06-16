@@ -1,11 +1,9 @@
 import React from 'react';
 import {Image, Pressable, Text} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import globalStyles from '../../styles/globalStyles';
 
-const MyPlantCard = ({plant}) => {
-  const navigation = useNavigation();
+const MyPlantCard = ({plant, navigation}) => {
   return (
     <Pressable
       style={styles.cardContainer}
