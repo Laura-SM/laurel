@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   textContainer: {
     position: 'absolute',
     bottom: 20,
-    backgroundColor: '#7a918d',
+    backgroundColor: '#93B1A7',
     opacity: 0.6,
     marginHorizontal: 20,
     width: 250,

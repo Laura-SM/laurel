@@ -18,9 +18,7 @@ function PlantDetails({selectedPlant, dispatch, route, navigation}) {
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
       </View>
-      <Text style={globalStyles.subTitleText}>
-        {selectedPlant.scientificName}
-      </Text>
+      <Text style={styles.subTitleText}>{selectedPlant.scientificName}</Text>
       <View style={styles.centralContainer}>
         <Image style={styles.image} source={{uri: selectedPlant.image}} />
         <View style={styles.featuresContainer}>
