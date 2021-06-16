@@ -4,7 +4,6 @@ import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {deletePlant, loadPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
-import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import globalStyles from '../../styles/globalStyles';
 
@@ -13,10 +12,9 @@ const MyPlantDetails = ({
   selectedPlant,
   dispatch,
   route,
-  navigation: {goBack},
+  navigation,
 }) => {
   const {plantId} = route.params;
-  const navigation = useNavigation();
 
   const waterDate = new Date(selectedPlant.nextWaterDate).toLocaleDateString();
   const mistDate = new Date(selectedPlant.nextMistDate).toLocaleDateString();
@@ -42,6 +40,7 @@ const MyPlantDetails = ({
       <View style={globalStyles.headerContainer}>
         <Text style={globalStyles.titleText}>{selectedPlant.name}</Text>
         <TouchableOpacity
+          testID="deletePlantButton"
           style={globalStyles.roundButton}
           onPress={() => onPressDeletePlant()}>
           <Image source={require('../../icons/delete24.png')} />
@@ -70,8 +69,9 @@ const MyPlantDetails = ({
       </View>
       <View style={globalStyles.bottomContainer}>
         <TouchableOpacity
+          testID="goBackButton"
           style={globalStyles.roundButton}
-          onPress={() => goBack()}>
+          onPress={() => navigation.goBack()}>
           <Image source={require('../../icons/goBack24.png')} />
         </TouchableOpacity>
       </View>

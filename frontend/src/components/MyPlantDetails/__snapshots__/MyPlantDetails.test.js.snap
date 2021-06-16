@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a MyPlantDetails component When invoques MyPlantDetails function Should render a plant with detail 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 80,
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "bold",
+          "margin": 20,
+        }
+      }
+    >
+      kentia
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#B8E0D2",
+          "borderRadius": 50,
+          "height": 60,
+          "justifyContent": "center",
+          "margin": 20,
+          "opacity": 1,
+          "width": 60,
+        }
+      }
+      testID="deletePlantButton"
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/icons/delete24.png",
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "img.com",
+        }
+      }
+      style={
+        Object {
+          "backgroundColor": "#E5E5E5",
+          "borderRadius": 10,
+          "height": 290,
+          "margin": 20,
+          "width": 290,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "width": 300,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginVertical": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/room24.png",
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "marginHorizontal": 20,
+            }
+          }
+        >
+          bedroom
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginVertical": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/water24.png",
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "marginHorizontal": 20,
+            }
+          }
+        >
+          Invalid Date
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginVertical": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/mist24.png",
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "marginHorizontal": 20,
+            }
+          }
+        >
+          Invalid Date
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginVertical": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/icons/settings24.png",
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "marginHorizontal": 20,
+            }
+          }
+        >
+          Invalid Date
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#B8E0D2",
+          "borderRadius": 50,
+          "height": 60,
+          "justifyContent": "center",
+          "margin": 20,
+          "opacity": 1,
+          "width": 60,
+        }
+      }
+      testID="goBackButton"
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/icons/goBack24.png",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

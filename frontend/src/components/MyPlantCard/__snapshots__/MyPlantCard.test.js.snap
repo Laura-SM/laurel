@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a MyPlantCard component When invoques MyPlantCard function Then MyPlantCard component renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "borderColor": "#93B1A7",
+      "borderRadius": 10,
+      "borderWidth": 2,
+      "height": 165,
+      "justifyContent": "center",
+      "marginLeft": 20,
+      "marginVertical": 10,
+      "width": 165,
+    }
+  }
+  testID="goToDetails"
+>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "#E5E5E5",
+        "borderRadius": 10,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "marginHorizontal": 20,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "marginHorizontal": 20,
+      }
+    }
+  />
+</View>
+`;
