@@ -11,14 +11,11 @@ import {
 import {connect} from 'react-redux';
 import {addPlant} from '../../redux/actions/plantsActionCreators';
 import {updateUser} from '../../redux/actions/usersActionCreators';
-import {useNavigation} from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import globalStyles from '../../styles/globalStyles';
 import styles from './styles';
 
-const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
-  const navigation = useNavigation();
-
+const AddPlant = ({dispatch, userAccess, selectedPlant, navigation}) => {
   const [name, setPlantNameInputValue] = useState('');
   const [room, setRoomInputValue] = useState('');
 
@@ -94,6 +91,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/description24.png')} />
             <TextInput
+              testID="plantNameInput"
               style={styles.input}
               onChangeText={text => setPlantNameInputValue(text)}
               value={name}
@@ -104,6 +102,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
           <View style={styles.iconsContainer}>
             <Image source={require('../../icons/room24.png')} />
             <TextInput
+              testID="plantRoomInput"
               style={styles.input}
               onChangeText={text => setRoomInputValue(text)}
               value={room}
@@ -191,6 +190,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
           </View>
         </View>
         <TouchableOpacity
+          testID="addPlantButton"
           style={globalStyles.submitButton}
           onPress={onPressAddPlant}>
           <Image source={require('../../icons/done24.png')} />
@@ -198,6 +198,7 @@ const AddPlant = ({dispatch, userAccess, selectedPlant}) => {
       </View>
       <View style={globalStyles.bottomContainer}>
         <TouchableOpacity
+          testID="goBackButton"
           style={globalStyles.roundButton}
           onPress={() => updateUserPlantsAndGoBack()}>
           <Image source={require('../../icons/goBack24.png')} />
