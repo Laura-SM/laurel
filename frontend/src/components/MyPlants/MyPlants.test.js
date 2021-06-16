@@ -8,7 +8,7 @@ import MyPlantCard from '../MyPlantCard';
 
 describe('Given a MyPlants component', () => {
   const mockStore = configureStore([thunk]);
-  const store = mockStore({
+  let store = mockStore({
     plants: [
       {name: 'kentia', _id: '1a'},
       {name: 'potus', _id: '2a'},
@@ -23,8 +23,32 @@ describe('Given a MyPlants component', () => {
     navigate: jest.fn(),
   };
 
-  describe('When is invoked', () => {
-    test('Then it is renders correctly', () => {
+  describe('When MyPlants function is invoked', () => {
+    test('Then MyPlants is rendered correctly', () => {
+      const wrapper = render(
+        <Provider store={store}>
+          <MyPlants>
+            <MyPlantCard />
+          </MyPlants>
+        </Provider>,
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('When MyPlants function is invoked with an empty user plants list', () => {
+    test('Then is rendered whitout plants', () => {
+      store = mockStore({
+        plants: [
+          {name: 'kentia', _id: '1a'},
+          {name: 'potus', _id: '2a'},
+        ],
+        userAccess: {
+          user: {
+            plants: [],
+          },
+        },
+      });
       const wrapper = render(
         <Provider store={store}>
           <MyPlants>

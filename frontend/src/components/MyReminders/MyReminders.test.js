@@ -8,7 +8,7 @@ import ReminderCard from '../ReminderCard/index';
 
 describe('Given a MyReminders component', () => {
   const mockStore = configureStore([thunk]);
-  const store = mockStore({
+  let store = mockStore({
     plants: [
       {name: 'kentia', _id: '1a'},
       {name: 'potus', _id: '2a'},
@@ -22,6 +22,27 @@ describe('Given a MyReminders component', () => {
 
   describe('When is invoked', () => {
     test('Then it is renders correctly', () => {
+      const wrapper = render(
+        <Provider store={store}>
+          <MyReminders>
+            <ReminderCard />
+          </MyReminders>
+        </Provider>,
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('When MyReminders function is invoked with an empty plants list', () => {
+    test('Then is rendered whitout plants', () => {
+      store = mockStore({
+        plants: [],
+        userAccess: {
+          user: {
+            plants: [],
+          },
+        },
+      });
       const wrapper = render(
         <Provider store={store}>
           <MyReminders>
