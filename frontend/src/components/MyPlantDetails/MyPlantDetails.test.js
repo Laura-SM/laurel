@@ -2,7 +2,6 @@ import 'react-native';
 import React from 'react';
 import MyPlantDetails from './index';
 import * as userActions from '../../redux/actions/usersActionCreators';
-import * as actions from '../../redux/actions/plantsActionCreators';
 import thunk from 'redux-thunk';
 import Store from 'redux-mock-store';
 import {Provider} from 'react-redux';
