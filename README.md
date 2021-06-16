@@ -2,7 +2,7 @@
 
 <h2 align="left">Helps you to take care of your plants<h2>
 
-<p>This is my final project of Skylab bootcamp. I created a fullstack app with React Native that allows a user to add their plants and control the date of the next water, mist or transplant needs. Also, it offers a list of plants with their main features to give inspiration before acquiring a new plant or to know better their requirements.</p>
+This is my final project of Skylab bootcamp. I created a fullstack app with React Native that allows a user to add their plants and control the date of the next water, mist or transplant needs. Also, it offers a list of plants with their main features to give inspiration before acquiring a new plant or to know better their requirements.</p>
 
 <h3>How tu run this app:</h3>
 The project needs to have Android Studio or XCode installed!</br>
