@@ -13,7 +13,9 @@ const MyPlants = ({plants, userAccess, navigation}) => {
       myPlantsList.push(myPlant);
     });
   }
-  const renderMyPlantCard = ({item}) => <MyPlantCard plant={item} />;
+  const renderMyPlantCard = ({item}) => (
+    <MyPlantCard plant={item} navigation={navigation} />
+  );
 
   return (
     <FlatList
