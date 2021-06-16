@@ -1,12 +1,10 @@
 import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
-import {useNavigation} from '@react-navigation/native';
 import MyPlantCard from '../MyPlantCard';
 import globalStyles from '../../styles/globalStyles';
 
-const MyPlants = ({plants, userAccess}) => {
-  const navigation = useNavigation();
+const MyPlants = ({plants, userAccess, navigation}) => {
   const myPlantsIds = [...userAccess.user.plants];
   const myPlantsList = [];
   if (myPlantsIds.length) {
