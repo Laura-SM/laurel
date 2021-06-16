@@ -1,12 +1,11 @@
 import React from 'react';
 import {Image, Pressable, Text, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
-const PlantCard = ({plant}) => {
-  const navigation = useNavigation();
+const PlantCard = ({plant, navigation}) => {
   return (
     <Pressable
+      testID="goToDetails"
       style={styles.cardContainer}
       onPress={() => navigation.navigate('PlantDetails', {plantId: plant._id})}>
       <Image style={styles.image} source={{uri: plant.image}} />
