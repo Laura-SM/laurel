@@ -21,7 +21,7 @@ const ReminderCard = ({plant}) => {
 
   return (
     <View style={styles.cardContainer}>
-      <View style={styles.image} />
+      <Image style={styles.image} source={{uri: plant.image}} />
       <View style={styles.featuresContainer}>
         <View style={styles.iconsContainer}>
           <Text style={globalStyles.boldText}>{plant.name}</Text>
