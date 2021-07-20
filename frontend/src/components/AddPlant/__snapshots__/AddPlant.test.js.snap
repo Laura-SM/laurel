@@ -201,7 +201,7 @@ exports[`Given a AddPlant component When is AddPlant function is invoked Then Ad
                 }
               }
               underlineColorAndroid="transparent"
-              value="16/06/2021"
+              value="15/07/2021"
             />
           </View>
         </View>
@@ -252,7 +252,7 @@ exports[`Given a AddPlant component When is AddPlant function is invoked Then Ad
                 }
               }
               underlineColorAndroid="transparent"
-              value="16/06/2021"
+              value="15/07/2021"
             />
           </View>
         </View>
@@ -303,7 +303,7 @@ exports[`Given a AddPlant component When is AddPlant function is invoked Then Ad
                 }
               }
               underlineColorAndroid="transparent"
-              value="16/06/2021"
+              value="15/07/2021"
             />
           </View>
         </View>

@@ -34,9 +34,12 @@ exports[`Given a PlantDetails component When invoques PlantDetails function Shou
   <Text
     style={
       Object {
+        "borderBottomColor": "#93B1A7",
+        "borderBottomWidth": 2,
         "fontSize": 18,
         "fontStyle": "italic",
         "marginHorizontal": 20,
+        "paddingBottom": 10,
       }
     }
   />
