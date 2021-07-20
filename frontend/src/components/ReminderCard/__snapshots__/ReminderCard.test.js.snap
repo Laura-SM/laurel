@@ -27,8 +27,8 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
       Object {
         "backgroundColor": "#E5E5E5",
         "borderRadius": 10,
-        "height": 100,
-        "width": 100,
+        "height": 120,
+        "width": 120,
       }
     }
   />
@@ -36,18 +36,17 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
     style={
       Object {
         "alignItems": "flex-start",
-        "width": 150,
+        "width": 180,
       }
     }
   >
     <View
       style={
         Object {
-          "alignItems": "flex-start",
           "flexDirection": "row",
-          "justifyContent": "space-around",
+          "justifyContent": "flex-start",
           "marginVertical": 10,
-          "width": 170,
+          "width": 150,
         }
       }
     >
@@ -56,7 +55,7 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
           Object {
             "fontSize": 18,
             "fontWeight": "bold",
-            "marginHorizontal": 20,
+            "marginHorizontal": 5,
           }
         }
       >
@@ -66,7 +65,7 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
         style={
           Object {
             "fontSize": 18,
-            "marginHorizontal": 20,
+            "marginHorizontal": 5,
           }
         }
       >
@@ -76,11 +75,10 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
     <View
       style={
         Object {
-          "alignItems": "flex-start",
           "flexDirection": "row",
-          "justifyContent": "space-around",
+          "justifyContent": "flex-start",
           "marginVertical": 10,
-          "width": 170,
+          "width": 180,
         }
       }
     >
@@ -90,6 +88,11 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
             "testUri": "../../../src/icons/water24.png",
           }
         }
+        style={
+          Object {
+            "margin": 10,
+          }
+        }
       />
       <Image
         source={
@@ -97,11 +100,21 @@ exports[`Given a ReminderCard component, When ReminderCard function is invoked, 
             "testUri": "../../../src/icons/mist24.png",
           }
         }
+        style={
+          Object {
+            "margin": 10,
+          }
+        }
       />
       <Image
         source={
           Object {
             "testUri": "../../../src/icons/settings24.png",
+          }
+        }
+        style={
+          Object {
+            "margin": 10,
           }
         }
       />

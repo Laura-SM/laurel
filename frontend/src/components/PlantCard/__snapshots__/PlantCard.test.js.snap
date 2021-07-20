@@ -39,7 +39,7 @@ exports[`Given a PlantCard component When invoques PlantCard function Then Plant
   <View
     style={
       Object {
-        "backgroundColor": "#7a918d",
+        "backgroundColor": "#93B1A7",
         "borderBottomLeftRadius": 10,
         "borderTopRightRadius": 60,
         "bottom": 20,
